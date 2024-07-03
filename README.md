@@ -25,7 +25,7 @@ Ordered by publication date:
 
 * ![](https://img.shields.io/badge/Induction%20Head-blue) Birth of a Transformer: A Memory Viewpoint. NeurIPS 2023. [[Paper](https://openreview.net/forum?id=3X2EbBLNsk)] [[Code](https://github.com/albietz/transformer-birth)]
 
-* ![](https://img.shields.io/badge/Copy--Suppression%20Head-blue) Copy Suppression: Comprehensively Understanding an Attention Head. arXiv 2023. [[Paper](https://arxiv.org/abs/2310.04625)] [[Demo](https://copy-suppression.streamlit.app/)]
+* ![](https://img.shields.io/badge/Copy%20Suppression%20Head-blue) Copy Suppression: Comprehensively Understanding an Attention Head. arXiv 2023. [[Paper](https://arxiv.org/abs/2310.04625)] [[Demo](https://copy-suppression.streamlit.app/)]
 
 * ![](https://img.shields.io/badge/Induction%20Head-blue) In-context Learning and Induction Heads. Transformer Circuits Thread 2022. [[Paper](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html)]
 
