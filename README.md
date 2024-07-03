@@ -13,6 +13,8 @@ Ordered by publication date:
 
 * ![](https://img.shields.io/badge/Retrieval%20Head-blue) Retrieval Head Mechanistically Explains Long-Context Factuality. arXiv 2024. [[Paper](https://arxiv.org/abs/2404.15574)] [[Code](https://github.com/nightdessert/Retrieval_Head)]
 
+* ![](https://img.shields.io/badge/Truthfulness%20Head-blue) Non-Linear Inference Time Intervention: Improving LLM Truthfulness. arXiv 2024. [[Paper](https://arxiv.org/abs/2403.18680)] [[Code](https://github.com/Samsung/NL-ITI)]
+
 * ![](https://img.shields.io/badge/Induction%20Head-blue) Identifying Semantic Induction Heads to Understand In-Context Learning. arXiv 2024. [[Paper](https://arxiv.org/abs/2402.13055v1)]
 
 * ![](https://img.shields.io/badge/Induction%20Head-blue) The Evolution of Statistical Induction Heads: In-Context Learning Markov Chains. arXiv 2024. [[Paper](https://arxiv.org/abs/2402.11004)]
