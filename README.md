@@ -23,8 +23,12 @@ Ordered by publication date:
 
 * ![](https://img.shields.io/badge/Induction%20Head-blue) Birth of a Transformer: A Memory Viewpoint. NeurIPS 2023. [[Paper](https://openreview.net/forum?id=3X2EbBLNsk)] [[Code](https://github.com/albietz/transformer-birth)]
 
+* ![](https://img.shields.io/badge/Copy--Suppression%20Head-blue) Copy Suppression: Comprehensively Understanding an Attention Head. arXiv 2023. [[Paper](https://arxiv.org/abs/2310.04625)] [[Demo](https://copy-suppression.streamlit.app/)]
+
 * ![](https://img.shields.io/badge/Induction%20Head-blue) In-context Learning and Induction Heads. Transformer Circuits Thread 2022. [[Paper](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html)]
 
 * ![](https://img.shields.io/badge/Induction%20Head-blue) A Mathematical Framework for Transformer Circuits. Transformer Circuits Thread 2021. [[Paper](https://transformer-circuits.pub/2021/framework/index.html)]
+
+* ![](https://img.shields.io/badge/Positional%20Head-blue) ![](https://img.shields.io/badge/Syntactic%20Head-blue) ![](https://img.shields.io/badge/Rare%20words%20Head-blue) Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned. ACL 2019. [[Paper](https://aclanthology.org/P19-1580/)] [[Code](https://github.com/lena-voita/the-story-of-heads)]
 
 * ![](https://img.shields.io/badge/Retrieval%20Head-blue) Incorporating Copying Mechanism in Sequence-to-Sequence Learning. ACL 2016. [[Paper](https://aclanthology.org/P16-1154/)]
