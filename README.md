@@ -27,4 +27,4 @@ Ordered by publication date:
 
 * ![](https://img.shields.io/badge/Induction%20Head-blue) A Mathematical Framework for Transformer Circuits. Transformer Circuits Thread 2021. [[Paper](https://transformer-circuits.pub/2021/framework/index.html)]
 
-* ![](https://img.shields.io/badge/Retrieval%20Head-blue)Incorporating Copying Mechanism in Sequence-to-Sequence Learning. ACL 2016. [[Paper](https://aclanthology.org/P16-1154/)]
+* ![](https://img.shields.io/badge/Retrieval%20Head-blue) Incorporating Copying Mechanism in Sequence-to-Sequence Learning. ACL 2016. [[Paper](https://aclanthology.org/P16-1154/)]
