@@ -21,6 +21,8 @@ Ordered by publication date:
 
 * ![](https://img.shields.io/badge/In--Context%20Head-blue) How do Large Language Models Learn In-Context? Query and Key Matrices of In-Context Heads are Two Towers for Metric Learning. arXiv 2024. [[Paper](https://arxiv.org/abs/2402.02872)]
 
+* ![](https://img.shields.io/badge/Function%20Vector%20Head-blue) Function Vectors in Large Language Models. ICLR 2024. [[Paper](https://openreview.net/forum?id=AwyxtyMwaG&noteId=6Qv7kx00La)] [[Project](https://functions.baulab.info/)] [[Code](https://github.com/ericwtodd/function_vectors)] [[Data](https://github.com/ericwtodd/function_vectors/tree/main/dataset_files)]
+
 * ![](https://img.shields.io/badge/Truthfulness%20Head-blue) Inference-Time Intervention: Eliciting Truthful Answers from a Language Model. NeurIPS 2023. [[Paper](https://openreview.net/forum?id=aLLuYpn83y)] [[Code](https://github.com/likenneth/honest_llama)]
 
 * ![](https://img.shields.io/badge/Induction%20Head-blue) Birth of a Transformer: A Memory Viewpoint. NeurIPS 2023. [[Paper](https://openreview.net/forum?id=3X2EbBLNsk)] [[Code](https://github.com/albietz/transformer-birth)]
