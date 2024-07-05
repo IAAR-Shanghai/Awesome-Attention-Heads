@@ -9,6 +9,8 @@ Ordered by publication date:
 
 * ![](https://img.shields.io/badge/Iteration%20Head-blue) Iteration Head: A Mechanistic Study of Chain-of-Thought. arXiv 2024. [[Paper](https://arxiv.org/abs/2406.02128)]
 
+* ![](https://img.shields.io/badge/Mover%20Head-blue) ![](https://img.shields.io/badge/Relation%20Head-blue) Knowledge Circuits in Pretrained Transformers. arXiv 2024. [[Paper](https://arxiv.org/abs/2405.17969)] [[Code](https://github.com/zjunlp/KnowledgeCircuits)]
+
 * ![](https://img.shields.io/badge/Induction%20Head-blue) Induction Heads as a Primary Mechanism for Pattern Matching in In-context Learning. OpenReview 2024. [[Paper](https://openreview.net/forum?id=np6hrTv7aW)]
 
 * ![](https://img.shields.io/badge/Retrieval%20Head-blue) Retrieval Head Mechanistically Explains Long-Context Factuality. arXiv 2024. [[Paper](https://arxiv.org/abs/2404.15574)] [[Code](https://github.com/nightdessert/Retrieval_Head)]
@@ -18,6 +20,8 @@ Ordered by publication date:
 * ![](https://img.shields.io/badge/Induction%20Head-blue) Identifying Semantic Induction Heads to Understand In-Context Learning. arXiv 2024. [[Paper](https://arxiv.org/abs/2402.13055v1)]
 
 * ![](https://img.shields.io/badge/Induction%20Head-blue) The Evolution of Statistical Induction Heads: In-Context Learning Markov Chains. arXiv 2024. [[Paper](https://arxiv.org/abs/2402.11004)]
+
+* ![](https://img.shields.io/badge/Mover%20Head-blue) ![](https://img.shields.io/badge/Relation%20Head-blue) Summing Up the Facts: Additive Mechanisms Behind Factual Recall in LLMs. arXiv 2024. [[Paper](https://www.arxiv.org/abs/2402.07321)]
 
 * ![](https://img.shields.io/badge/In--Context%20Head-blue) How do Large Language Models Learn In-Context? Query and Key Matrices of In-Context Heads are Two Towers for Metric Learning. arXiv 2024. [[Paper](https://arxiv.org/abs/2402.02872)]
 
