@@ -1,11 +1,20 @@
-# Awesome-Attention-Heads
+<h2 align='center'> Awesome-Attention-Heads </h2>
+<div align='center'>
 
-[![Awesome Attention Heads](https://img.shields.io/static/v1?label=&message=Awesome+Attention+Heads&color=black&logo=awesomelists)](https://github.com/IAAR-Shanghai/Awesome-Attention-Heads)
-![](https://img.shields.io/github/last-commit/IAAR-Shanghai/Awesome-Attention-Heads?color=green)
+[![Awesome Attention Heads](https://img.shields.io/static/v1?label=&message=Awesome+Attention+Heads&color=black&logo=awesomelists)](https://github.com/IAAR-Shanghai/Awesome-Attention-Heads) ![](https://img.shields.io/github/last-commit/IAAR-Shanghai/Awesome-Attention-Heads?color=green)
 
+</div>
+
+Welcome to **Awesome-Attention-Heads**! This is the platform to get the latest research on Attention Heads. We hope to provide complete and clear cutting-edge informations for researchers studying LLM interpretability and LLM hallucination.
+
+### Background
 With the development of large language models, their underlying network structure, the Transformer, is being extensively studied. Researching the Transformer structure helps us enhance our understanding of this "black box" and improve model interpretability. Recently, there has been an increasing body of work suggesting that the model contains two distinct partitions: attention mechanisms used for behavior, inference, and analysis, and feed-forward networks (FFN) for knowledge storage. The former is crucial for revealing the functional capabilities of the model, leading to a series of studies exploring various functions within attention mechanisms, which we have termed **Attention Head Mining**.
 
-Ordered by publication date:
+### Table of Contents
+- [Latest Papers](#lastest-papers)
+
+### Lastest Papers
+Papers below are ordered by publication date:
 
 * ![](https://img.shields.io/badge/Iteration%20Head-blue) Iteration Head: A Mechanistic Study of Chain-of-Thought. arXiv 2024. [[Paper](https://arxiv.org/abs/2406.02128)]
 
