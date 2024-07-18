@@ -18,6 +18,8 @@ Papers below are ordered by publication date:
 
 | Date | Paper | Tags | Links & Summary |
 | --- | --- | --- | --- |
+| 2024-07-01 | **Steering Large Language Models for Cross-lingual Information Retrieval** | ![](https://img.shields.io/badge/Accuracy%20Head-blue) ![](https://img.shields.io/badge/Coherence%20Head-blue) | [![Paper](https://img.shields.io/badge/SIGIR-Paper-%23D2691E)](https://dl.acm.org/doi/10.1145/3626772.3657819) |
+| 2024-06-19 | **On the Difficulty of Faithful Chain-of-Thought Reasoning in Large Language Models** | ![](https://img.shields.io/badge/Faithfulness%20Head-blue) | [![Paper](https://img.shields.io/badge/ICML-Paper-%23D2691E)](https://openreview.net/forum?id=3h0kZdPhAC) |
 | 2024-06-16 | **Induction Heads as a Primary Mechanism for Pattern Matching in In-context Learning** | ![](https://img.shields.io/badge/Induction%20Head-blue) | [![Paper](https://img.shields.io/badge/OpenReview-Paper-%23D2691E)](https://openreview.net/forum?id=np6hrTv7aW) |
 | 2024-06-04 | **Iteration Head: A Mechanistic Study of Chain-of-Thought** | ![](https://img.shields.io/badge/Iteration%20Head-blue) | [![Paper](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/abs/2406.02128) |
 | 2024-05-28 | **Knowledge Circuits in Pretrained Transformers** | ![](https://img.shields.io/badge/Mover%20Head-blue) ![](https://img.shields.io/badge/Relation%20Head-blue) | [![Paper](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/abs/2405.17969) [![Code](https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github)](https://github.com/zjunlp/KnowledgeCircuits) |
