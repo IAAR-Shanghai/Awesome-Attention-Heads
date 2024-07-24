@@ -13,6 +13,7 @@ With the development of large language models, their underlying network structur
 ### Table of Contents
 - [Cite this repo](#cite-this-repo)
 - [Latest Papers](#lastest-papers)
+- [Star Trends](#star-trends)
 
 ### Cite this repo
 ```
@@ -63,3 +64,13 @@ Papers below are ordered by publication date:
 | 2019-08-01 | **What does BERT look at? An Analysis of BERT’s Attention** |  ![](https://img.shields.io/badge/Syntactic%20Head-blue)  | [![Paper](https://img.shields.io/badge/ACL-Paper-%23D2691E)](https://aclanthology.org/W19-4828/) [![Code](https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github)](https://github.com/clarkkev/attention-analysis) |
 | 2019-05-22 | **Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned** | ![](https://img.shields.io/badge/Positional%20Head-blue) ![](https://img.shields.io/badge/Syntactic%20Head-blue) ![](https://img.shields.io/badge/Rare%20words%20Head-blue) | [![Paper](https://img.shields.io/badge/ACL-Paper-%23D2691E)](https://aclanthology.org/P19-1580/) [![Code](https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github)](https://github.com/lena-voita/the-story-of-heads) |
 | 2016-03-21 | **Incorporating Copying Mechanism in Sequence-to-Sequence Learning** | ![](https://img.shields.io/badge/Retrieval%20Head-blue)  | [![Paper](https://img.shields.io/badge/ACL-Paper-%23D2691E)](https://aclanthology.org/P16-1154/) |
+
+## Star Trends
+
+<a href="https://star-history.com/#IAAR-Shanghai/Awesome-Attention-Heads&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=IAAR-Shanghai/Awesome-Attention-Heads&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=IAAR-Shanghai/Awesome-Attention-Heads&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=IAAR-Shanghai/Awesome-Attention-Heads&type=Date" />
+  </picture>
+</a>
