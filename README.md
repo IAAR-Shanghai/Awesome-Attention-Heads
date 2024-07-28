@@ -32,6 +32,7 @@ Papers below are ordered by publication date:
 
 | Date | Paper | Tags | Links & Summary |
 | --- | --- | --- | --- |
+| 2024-07-22 | **RazorAttention: Efficient KV Cache Compression Through Retrieval Heads** | ![](https://img.shields.io/badge/Retrieval_Head-blue) | [![Paper](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/abs/2407.15891) |
 | 2024-07-21 | **Answer, Assemble, Ace: Understanding How Transformers Answer Multiple Choice Questions** | ![](https://img.shields.io/badge/Answer_Head-blue) | [![Paper](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/abs/2407.15018) |
 | 2024-07-01 | **Steering Large Language Models for Cross-lingual Information Retrieval** | ![](https://img.shields.io/badge/Accuracy_Head-blue) ![](https://img.shields.io/badge/Coherence_Head-blue) | [![Paper](https://img.shields.io/badge/SIGIR-Paper-%23D2691E)](https://dl.acm.org/doi/10.1145/3626772.3657819) |
 | 2024-06-21 | **MoA: Mixture of Sparse Attention for Automatic Large Language Model Compression** | ![](https://img.shields.io/badge/Local--context_Head-blue) | [![Paper](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/abs/2406.14909) [![Code](https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github)](https://github.com/thu-nics/MoA) |
