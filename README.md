@@ -32,6 +32,7 @@ Papers below are ordered by publication date:
 
 | Date | Paper | Tags | Links & Summary |
 | --- | --- | --- | --- |
+| 2024-07-31 | **Correcting Negative Bias in Large Language Models through Negative Attention Score Alignment** | ![](https://img.shields.io/badge/Negative_Head-blue) | [![Paper](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/abs/2408.00137) |
 | 2024-07-22 | **RazorAttention: Efficient KV Cache Compression Through Retrieval Heads** | ![](https://img.shields.io/badge/Retrieval_Head-blue) | [![Paper](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/abs/2407.15891) |
 | 2024-07-21 | **Answer, Assemble, Ace: Understanding How Transformers Answer Multiple Choice Questions** | ![](https://img.shields.io/badge/Answer_Head-blue) | [![Paper](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/abs/2407.15018) |
 | 2024-07-09 | **Induction Heads as an Essential Mechanism for Pattern Matching in In-context Learning** | ![](https://img.shields.io/badge/Induction_Head-blue) | [![Paper](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/abs/2407.07011) |
