@@ -11,21 +11,8 @@ Welcome to **Awesome-Attention-Heads**! This is the platform to get the latest r
 With the development of large language models, their underlying network structure, the Transformer, is being extensively studied. Researching the Transformer structure helps us enhance our understanding of this "black box" and improve model interpretability. Recently, there has been an increasing body of work suggesting that the model contains two distinct partitions: attention mechanisms used for behavior, inference, and analysis, and feed-forward networks (FFN) for knowledge storage. The former is crucial for revealing the functional capabilities of the model, leading to a series of studies exploring various functions within attention mechanisms, which we have termed **Attention Head Mining**.
 
 ### Table of Contents
-- [Cite this repo](#cite-this-repo)
 - [Latest Papers](#lastest-papers)
 - [Star Trends](#star-trends)
-
-### Cite this repo
-```
-@misc{AwesomeAttnHead_24_github_IAAR,
-  author = {Song, Shichao and Zheng, Zifan and Wang, Yezhaohui and others},
-  title = {Awesome-Attention-Heads},
-  year = {2024},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/IAAR-Shanghai/Awesome-Attention-Heads}}
-}
-```
 
 ### Lastest Papers
 Papers below are ordered by publication date:
