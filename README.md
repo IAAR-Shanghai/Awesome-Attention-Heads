@@ -15,7 +15,7 @@ With the development of large language models, their underlying network structur
 - [Star Trends](#star-trends)
 
 ### Lastest Papers
-Papers below are ordered by publication date:
+Papers below are ordered by **publication date**:
 
 | Date | Paper | Tags | Links & Summary |
 | --- | --- | --- | --- |
