@@ -19,7 +19,7 @@ Papers below are ordered by **publication date**:
 
 | Date | Paper | Tags | Links & Summary |
 | --- | --- | --- | --- |
-| 2024-08-01 | **Enhancing Semantic Consistency of Large Language Models through Model Editing: An Interpretability-Oriented Approach** | ![](https://img.shields.io/badge/Semantic_Consistency_Head-blue) | [![Paper](https://img.shields.io/badge/ACL_Findings-Paper-%23D2691E)](https://aclanthology.org/2024.findings-acl.199/) |
+| 2024-08-01 | **Enhancing Semantic Consistency of Large Language Models through Model Editing: An Interpretability-Oriented Approach** | ![](https://img.shields.io/badge/Consistency_Head-blue) | [![Paper](https://img.shields.io/badge/ACL_Findings-Paper-%23D2691E)](https://aclanthology.org/2024.findings-acl.199/) |
 | 2024-07-31 | **Correcting Negative Bias in Large Language Models through Negative Attention Score Alignment** | ![](https://img.shields.io/badge/Negative_Head-blue) | [![Paper](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/abs/2408.00137) |
 | 2024-07-29 | **Detecting and Understanding Vulnerabilities in Language Models via Mechanistic Interpretability** | ![](https://img.shields.io/badge/Vulnerable_Head-blue) | [![Paper](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/abs/2407.19842) |
 | 2024-07-22 | **RazorAttention: Efficient KV Cache Compression Through Retrieval Heads** | ![](https://img.shields.io/badge/Retrieval_Head-blue) | [![Paper](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/abs/2407.15891) |
