@@ -69,7 +69,7 @@ Papers below are ordered by **publication date**:
 | 2019-07-01 | **Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned**<br><sub>&nbsp;&nbsp;• <br>&nbsp;&nbsp;• <br>&nbsp;&nbsp;• </sub> | ![](https://img.shields.io/badge/Positional_Head-blue) ![](https://img.shields.io/badge/Syntactic_Head-blue) ![](https://img.shields.io/badge/Rare_words_Head-blue) | [![Paper](https://img.shields.io/badge/ACL-Paper-%23D2691E)](https://aclanthology.org/P19-1580/) [![Code](https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github)](https://github.com/lena-voita/the-story-of-heads) |
 | 2016-03-21 | **Incorporating Copying Mechanism in Sequence-to-Sequence Learning**<br><sub>&nbsp;&nbsp;• <br>&nbsp;&nbsp;• <br>&nbsp;&nbsp;• </sub> | ![](https://img.shields.io/badge/Retrieval_Head-blue)  | [![Paper](https://img.shields.io/badge/ACL-Paper-%23D2691E)](https://aclanthology.org/P16-1154/) |
 
-## Star Trends
+## :star: Star Trends
 
 <a href="https://star-history.com/#IAAR-Shanghai/Awesome-Attention-Heads&Date">
   <picture>
