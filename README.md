@@ -68,6 +68,9 @@ With the development of Large Language Model (LLMs), their underlying network st
 ## About Our Survey
 In this survey, we delve into the potential mechanisms of how attention heads in LLMs contribute to the reasoning process.
 
+<div align="center">
+    <img src="assets/four_steps.png" alt="Survey Framework" width="85%">
+</div>
 
 ## Lastest Papers
 Papers below are ordered by **publication date**:
