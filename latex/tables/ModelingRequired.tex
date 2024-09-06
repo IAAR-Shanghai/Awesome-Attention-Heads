@@ -1,0 +1,19 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{multirow}
+% \usepackage{graphicx}
+\begin{table}[htbp]
+\centering
+\caption{Brief summarization of Modeling-Required methods.}
+\label{tab:ModelingRequired}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}clll@{}}
+\toprule
+\textbf{Type}                      & \multicolumn{1}{c}{\textbf{Specific Method}} & \multicolumn{1}{c}{\textbf{Core Operation}}                                                                                                       & \multicolumn{1}{c}{\textbf{Representative Works}}                                                                                                                                                                               \\ \midrule
+\multirow{2}{*}{Training-Free}     & Scoring                                      & \begin{tabular}[c]{@{}l@{}}Calculate the score that reflects the relationship between \\ the component's attributes and LLM features\end{tabular} & \begin{tabular}[c]{@{}l@{}}\citet{KnowledgeConflict_24_arXiv_UCAS}, \citet{RetrievalHead_24_arXiv_PKU}, \citet{InductionHead_24_arXiv_UoA}, \citet{NegativeHead_24_arXiv_SNU},\\ \citet{HumanMemory_24_arXiv_UCSD}\end{tabular} \\ \cmidrule(l){2-4} 
+                                   & Others                                       & New methods that have not yet been widely adopted                                                                                                 & \citet{InformationFlow_24_arXiv_Meta}                                                                                                                                                                                           \\ \midrule
+\multirow{2}{*}{Training-Required} & Probing                                      & \begin{tabular}[c]{@{}l@{}}Train a classifier to distinguish heads with different func-\\ tions using activation values\end{tabular}              & \begin{tabular}[c]{@{}l@{}}\citet{ITI_23_NIPS_harvard}, \citet{NL-ITI_24_arXiv-Samsung}, \citet{SuccessorHead_24_ICLR_Cambridge},\\ \citet{CrossLingual_24_SIGIR_UCAS}, \citet{SemanticConsistency_24_ACL_TJU}\end{tabular}                                             \\ \cmidrule(l){2-4} 
+                                   & Simplified Model Training                    & Train an approximate simplified model                                                                                                             & \citet{Markov_24_arXiv_Harvard}, \citet{IterationHead_24_arXiv_Meta}, \citet{MathFrame_21_TCT_Anthropic}                                                                                                                        \\ \bottomrule
+\end{tabular}%
+}
+\end{table}

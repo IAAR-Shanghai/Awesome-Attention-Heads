@@ -1,0 +1,458 @@
+\documentclass{article}
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{lipsum}		% Can be removed after putting your text content
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{doi}
+\usepackage{forest}
+
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{tikz}
+
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{tcolorbox}
+\usepackage{bm}
+
+\usepackage{pifont}       % \ding{xx}
+\usepackage{bbding}       % \Checkmark,\XSolid
+\usepackage{fontawesome} 
+
+
+\title{Attention Heads of Large Language Models: A Survey}
+
+\author{
+    \begin{tabular}{c}
+    Zifan Zheng$^{1,}$\thanks{Equal contribution.} \quad 
+    Yezhaohui Wang$^{1,*}$ \quad 
+    Yuxin Huang$^{2,*}$ \quad 
+    Shichao Song$^{1}$ \quad
+    Bo Tang$^{1}$ \vspace{.5mm} \\
+    Feiyu Xiong$^{1}$ \quad 
+    Zhiyu Li$^{1,}$\thanks{Corresponding author: lizy@iaar.ac.cn}
+    \end{tabular}
+    \\
+    % \small
+    \begin{tabular}{c}
+    $^1$Institute for Advanced Algorithms Research (IAAR), Shanghai \\
+    $^2$Institute for AI Industry Research (AIR), Tsinghua University \\
+    \end{tabular}
+}
+
+\date{}
+
+% Uncomment to override  the `A preprint' in the header
+\renewcommand{\headeright}{}
+\renewcommand{\undertitle}{}
+% \renewcommand{\shorttitle}{\textit{arXiv} Template}
+
+%%% Add PDF metadata to help others organize their library
+%%% Once the PDF is generated, you can check the metadata with
+%%% $ pdfinfo template.pdf
+\hypersetup{
+pdftitle={A template for the arxiv style},
+pdfsubject={q-bio.NC, q-bio.QM},
+pdfauthor={David S.~Hippocampus, Elias D.~Striatum},
+pdfkeywords={First keyword, Second keyword, More},
+}
+
+\begin{document}
+\maketitle
+
+%% Abstract
+\begin{abstract}
+Since the advent of ChatGPT, Large Language Models (LLMs) have excelled in various tasks but remain largely as black-box systems. Consequently, their development relies heavily on data-driven approaches, limiting performance enhancement through changes in internal architecture and reasoning pathways. As a result, many researchers have begun exploring the potential internal mechanisms of LLMs, aiming to identify the essence of their reasoning bottlenecks, with most studies focusing on attention heads.
+Our survey aims to shed light on the internal reasoning processes of LLMs by concentrating on the interpretability and underlying mechanisms of attention heads. We first distill the human thought process into a four-stage framework: Knowledge Recalling, In-Context Identification, Latent Reasoning, and Expression Preparation. Using this framework, we systematically review existing research to identify and categorize the functions of specific attention heads. Furthermore, we summarize the experimental methodologies used to discover these special heads, dividing them into two categories: Modeling-Free methods and Modeling-Required methods. Also, we outline relevant evaluation methods and benchmarks. Finally, we discuss the limitations of current research and propose several potential future directions. Our reference list is open-sourced at \url{https://github.com/IAAR-Shanghai/Awesome-Attention-Heads}.
+\end{abstract}
+
+\keywords{Attention Head \and Mechanistic Interpretability \and Large Language Model (LLMs) \and Survey}
+
+
+% Introduction %
+\section{Introduction}
+The Transformer architecture \citep{AttentionIsAllYouNeed} has demonstrated outstanding performance across various tasks, such as Natural Language Inference and Natural Language Generation. However, it still retains the black-box nature inherent to Deep Neural Networks (DNNs) \citep{LLMblackbox_gilpin2018, LLMblackbox_lipton2018}. As a result, many researchers have dedicated efforts to understanding the internal reasoning processes within these models, aiming to uncover the underlying mechanisms \citep{DNN_Interp_Montavon}. This line of research provides a theoretical foundation for models like BERT \citep{BERT_MODEL} and GPT \citep{GPT2_MODEL} to perform well in downstream applications. Additionally, in the current era where Large Language Models (LLMs) are widely applied, interpretability mechanisms can guide researchers in intervening in specific stages of LLM inference, thereby enhancing their problem-solving capabilities \citep{AttnLookback_24_arXiv_MIT, MaskLayer_24_arXiv_NUDT, ITI_23_NIPS_harvard}.
+
+Among the components of LLMs, attention heads play a crucial role in the reasoning process. Particularly in the recent years, attention heads within LLMs have garnered significant attention, as illustrated in Figure~\ref{fig:google_trends}. Numerous studies have explored attention heads with specific functions. This paper consolidates these research efforts, organizing and analyzing the potential mechanisms of different types of attention heads. Additionally, we summarize the methodologies employed in these investigations.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{figures/google_trends.pdf}
+    \caption{The global Google Trends Popularity of the keywords ``Attention Head'' and ``Model Interpretability''. The data retrieval date is August 1st, 2024.}
+    \label{fig:google_trends}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{figures/framework.pdf}
+    \caption{The survey's framework.}
+    \label{fig:Overview}
+\end{figure}
+
+\subsection{Structure of Our Work}
+The logical structure and classification method of this paper are illustrated in Figure~\ref{fig:Overview}. We begin with the background of the problem in Section~\ref{sec:background}, where we present a simplified representation of the LLMs' structures (Section~\ref{subsec:Math}) and explain the related key terms (Section~\ref{subsec:KeyTerm}). In Section~\ref{sec:HeadOverview}, we first summarize the four stages of human thought processes from a cognitive neuroscience perspective and apply this framework to analyze the reasoning mechanisms of LLMs. Using this as our classification criterion, we categorize existing work on attention heads, identifying commonalities among heads that contribute to similar reasoning processes (Sections~\ref{subsec:KR}–\ref{subsec:EP}) and exploring the collaborative mechanisms of heads functioning at different stages (Section~\ref{subsec:WorkTogether}).
+
+Investigating the internal mechanisms of models often requires extensive experiments to validate hypotheses. To provide a comprehensive understanding of these methods, we summarize the current experimental methodologies used to explore special attention heads in Section~\ref{sec:DiscoveryExp}. We divide these methodologies into two main categories based on whether they require additional modeling: Modeling-Free (Section~\ref{subsec:ModelFree}) and Modeling-Required (Section~\ref{subsec:ModelRequired}).
+
+In addition to the core sections shown in Figure~\ref{fig:Overview}, we summarize the evaluation tasks and benchmarks used in relevant studies in Section~\ref{sec:Evaluation}.
+Furthermore, in Section~\ref{sec:other_tasks}, we compile research on the mechanisms of Feed-Forward Networks (FFNs) and Mechanical Interpretability to help deepen our understanding of LLM structures from multiple perspectives.
+Finally, in Section~\ref{sec:Discussion}, we offer our insights on the current state of research in this field and outline several potential directions for future research.
+
+
+\subsection{Comparison with Related Surveys}
+To the best of our knowledge, there is no survey focused on the mechanisms of LLMs' attention heads. Specifically, \citet{SurveyDNNInner_23_SaTML_MIT} mainly discusses non-Transformer architectures, with little focus on attention heads. The surveys by \citet{SurveyMdedical_22_IEEE_Portugal, SurveyNeurAttn_21_arXiv_Brazil, SurveyAttentionModel_21_Linkedin, SurveydDLAttn_22_arixv_Netherland} cover older content, primarily focusing on the various attention computation methods that emerged during the early development of the Transformer. However, current LLMs still use the original scaled-dot product attention, indicating that many of the derived attention forms have become outdated. Although \citep{SurveyLLMInterp_24_arXiv} focuses on the internal structure of LLMs, it only summarizes experimental methodologies and overlooks research findings related to operational mechanisms.
+
+Compared to the aforementioned surveys, the strengths of our work are:
+\begin{itemize}
+    \item \textbf{Focus on the latest research.} Although earlier researchers explored the mechanisms of attention heads in models like BERT, many of these conclusions are now outdated. This paper primarily focuses on highly popular LLMs, such as LLaMA and GPT, consolidating the latest research findings.
+    \item \textbf{An innovative four-stage framework for LLM reasoning.} We have distilled key stages of human thought processes by integrating knowledge from cognitive neuroscience, psychology, and related fields. And we have applied these stages as an analogy for LLM reasoning.
+    \item \textbf{Detailed categorization of attention heads.} Based on the proposed four-stage framework, we classify different attention heads according to their functions within these stages, and we explain how heads operating at different stages collaborate to achieve alignment between humans and LLMs.
+    \item \textbf{Clear summarization of experimental methods.} We provide a detailed categorization of the current methods used to explore attention head functions from the perspective of model dependency, laying a foundation for the improvement and innovation of experimental methods in future research.
+\end{itemize}
+
+
+\subsection{Out-of-scope Topics}
+\begin{itemize}
+    \item This paper primarily targets the attention heads within current mainstream LLM architectures, specifically those with a decoder-only structure. As such, we do not discuss early studies related to the Transformer, such as those focusing on attention heads in BERT-based models.
+    \item Some studies on mechanistic interpretability propose holistic operational principles that encompass embeddings, attention heads, and MLPs. However, this paper focuses exclusively on attention heads. Consequently, Sections~\ref{sec:HeadOverview} through \ref{sec:DiscoveryExp} do not cover the roles of other components within the Transformer architecture; these are only briefly summarized in Section~\ref{sec:other_tasks}.
+\end{itemize}
+
+
+\section{Background} \label{sec:background}
+% LLMs Math Modelling %
+\subsection{Mathematical Representation of LLMs} \label{subsec:Math}
+To facilitate the discussion in subsequent sections, we first define the relevant notations\footnote{Currently, there are two main layer normalization methods in LLMs: Pre-Norm and Post-Norm~\citep{liu-etal-2020-understanding, xiong2020layer}. However, since these are not the focus of this paper, \textbf{we will omit Layer Normalization} in our discussion.}.
+
+As shown in Figure~\ref{fig:LLMStructure}, a model $\mathcal{M}$ consists of an embedding layer, $L$ identical decoder blocks, and an unembedding layer. The input to $\mathcal{M}$ are one-hot sentence tokens, with a shape of $\{0,1\}^{N \times |\mathcal{V}|}$, where $N$ is the length of the token sequence and $|\mathcal{V}|$ represents the vocabulary size.
+
+After passing through the embedding layer, which applies semantic embedding $\mathbf{W_{E}} \in \mathbb{R}^{|\mathcal{V}| \times d}$ and positional encoding $\mathbf{P_{E}}$ (e.g., RoPE~\citep{ROPE_24_Neuro_Zhuiyi}), the one-hot matrix is transformed into the input $\mathbf{X}_{0,0} \in \mathbb{R}^{N \times d}$ for the first decoder, where $d$ represents the dimension of the token embedding (latent vector).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{figures/LLMStructure.pdf}
+    \caption{The overall structure of decoder-only LLMs.}
+    \label{fig:LLMStructure}
+\end{figure}
+
+In the $\ell$-th $\ell \left(1\leq \ell \leq L\right)$ decoder block, there are two residual blocks. Each decoder blocks contain $H$ attention heads. The first residual block combines the input matrix $\mathbf{X}_{\ell,0} \in \mathbb{R}^{N \times d}$ with the output $\mathbf{X}_{\ell}^{\text{attn}}$ obtained from the multi-head attention operation, producing $\mathbf{X}_{\ell,1}$ (as shown in Equation~\ref{equ:decoder0}). Subsequently, $\mathbf{X}_{\ell,1}$ serves as the input for the second residual block. Here, $Attn_{\ell}^{h}\left(\cdot\right)\  \left(1\leq \ell \leq L, 1\leq h \leq H\right)$ represents the computation function of the $h$-th attention head in the $\ell$-th layer, where $1 \leq h \leq H$.
+\begin{equation} \label{equ:decoder0}
+\begin{aligned}
+    \mathbf{X}_{\ell}^{\text{attn}} &= \sum_{h=1}^{H}{Attn_{\ell}^{h}}\left(\mathbf{X}_{\ell,0}\right) \\
+    \mathbf{X}_{\ell,1} &= \mathbf{X}_{\ell,0} + \mathbf{X}_{\ell}^{\text{attn}}
+\end{aligned}
+\end{equation}
+
+Similarly, as shown in Equation~\ref{equ:decoder1}, the second residual block combines $\mathbf{X}_{\ell,1}$ with the output $\mathbf{X}_{\ell}^{\text{ffn}}$ obtained after passing through the FFN, yielding the final output $\mathbf{X}_{\ell+1,0}$ of the $\ell$-th decoder block. This output also serves as the input for the $\ell$+1-th decoder block. Here, $FFN_{\ell}\left(\cdot\right)$ consists of linear layers (and activation functions) such as GLU (Gated Linear Units), SwiGLU \citep{GLU_2020_arXiv_Google}, or MoE~\citep{MOETransformer}.
+\begin{equation} \label{equ:decoder1}
+\begin{aligned}
+    \mathbf{X}_{\ell}^{\text{ffn}} &= FFN_{\ell}\left(\mathbf{X}_{\ell,1}\right) \\
+    \mathbf{X}_{\ell+1,0} &= \mathbf{X}_{\ell,1} + \mathbf{X}_{\ell}^{\text{ffn}}
+\end{aligned}
+\end{equation}
+
+Here, we will concentrate on the details of $Attn_{\ell}^{h}\left(\cdot\right)$. This function can be expressed using matrix operations.
+Specifically, each layer's $Attn_{\ell}^{h}\left(\cdot\right)$ function corresponds to four low-rank matrices: $\mathbf{W_Q}_{\ell}^{h}, \mathbf{W_K}_{\ell}^{h}, \mathbf{W_V}_{\ell}^{h} \in \mathbb{R}^{d \times \frac{d}{H}}, \mathbf{O}_{\ell}^{h} \in \mathbb{R}^{\frac{d}{H} \times d}$. By multiplying $\mathbf{X}_{\ell,0}$ with $\mathbf{W_Q}_{\ell}^{h}$, the query matrix $\mathbf{Q}_{\ell}^{h} \in \mathbb{R}^{N \times \frac{d}{H}}$ is obtained. Similarly, the key matrix $\mathbf{K}_{\ell}^{h}$ and the value matrix $\mathbf{V}_{\ell}^{h}$ can be derived.
+The function $Attn_{\ell}^{h}\left(\cdot\right)$ can then be expressed as Equation~\ref{equ:attention} \citep{AttentionIsAllYouNeed}.
+\begin{equation} \label{equ:attention}
+    Attn_{\ell}^{h}\left(\mathbf{X}_{\ell,0}\right) = softmax\left(\mathbf{Q}_{\ell}^{h\top} \cdot \mathbf{K}_{\ell}^{h}\right) \cdot \mathbf{V}_{\ell}^{h} \cdot \mathbf{O}_{\ell}^{h}
+\end{equation}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{figures/residual_stream.pdf}
+    \caption{From the perspective of residual streams, the inference process of LLMs can be understood at a micro-level where attention heads access latent state matrices from other residual streams, as indicated by the gray arrows across layers in the diagram. At a macro-level, different residual streams control the flow of information through attention heads, as shown by the gray wavy lines in the diagram.}
+    \label{fig:ResidualStream}
+\end{figure}
+
+
+\subsection{Glossary of Key Terms} \label{subsec:KeyTerm}
+\input{Glossary}
+
+
+\section{Overview of Special Attention Heads} \label{sec:HeadOverview}
+Previous research has shown that the decoder-only architecture described in Section~\ref{sec:background} follows the Scaling Law, and it exhibits emergent abilities once the number of parameters reaches a certain threshold \citep{ScalingLaw_20_arXiv_OpenAI, ScalingLaw_21_arXiv_Stanford}. Many LLMs that have emerged subsequently demonstrate outstanding performance in numerous tasks, even close to human. However, researchers still do not fully understand why these models are able to achieve such remarkable results. To address this question, recent studies have begun to delve into the internal mechanisms of LLMs, focusing on their fundamental structure—a neural network composed of multi-attention heads and FFNs.
+
+We have observed that many studies concentrate on the functions of attention heads, attempting to explain their reasoning processes. Additionally, several researchers have drawn parallels of reasoning methods  between LLMs and human \citep{ICSF_24_arXiv_IAAR, AIHumanGAP_24_Intelligence_UWA}. Therefore, in this section, we will use the framework of human cognitive paradigms as a guiding method to classify the functions of different attention heads.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/four_steps.pdf}
+    \caption{The four-stage framework on human thinking / LLMs reasoning.}
+    \label{fig:four_steps}
+\end{figure}
+
+% Attention Head Function %
+\subsection{How does Brain / Attention Head think?}
+By summarizing and analyzing existing research, we find that the role of an attention head, as its name suggests, is quite analogous to the functions of the human brain. From a behavioral neuroscience perspective, the process by which the human brain thinks about specific problems can be abstracted into a four-step process: Knowledge Recalling (KR), In-Context Identification (ICI), Latent Reasoning (LR), and Expression Preparation (EP). These four steps can interact and transition between each other, as illustrated in Figure~\ref{fig:four_steps}.
+
+When solving a problem, humans first need to recall the knowledge they have learned that is relevant to the issue at hand. This process is known as \textbf{Knowledge Recalling (KR)}. During this stage, the hippocampus integrates memories into the brain's network \citep{SquireMemory} and activates different types of memories as needed \citep{MemoryRecall}.
+Confronted with the specific text of the problem, humans need to perform \textbf{In-Context Identification (ICI)}. This means that the brain not only focuses on the overall structural content of the text \citep{GeneralStructure} but also parses the syntactic \citep{Syntax} and semantic \citep{Semantic} information embedded within it.
+
+Once the brain has acquired the aforementioned textual and memory information, it attempts to integrate this information to derive conclusions, a process known as \textbf{Latent Reasoning (LR)}. This stage primarily includes arithmetic operations \citep{ReasoningNumber} and logical inference \citep{ReasoningLogic}.
+Finally, the brain needs to translate the reasoning results into natural language, forming an answer that can be expressed verbally. This is the \textbf{Expression Preparation (EP)} stage. At this point, the brain bridge the gap between ``knowing'' and ``saying'' \citep{LanguageExpress}.
+
+As indicated by the arrows in Figure~\ref{fig:four_steps}, these four stages are not executed in a strictly one-direction fashion when humans solve problems; rather, they can jump and switch between each other. For example, the brain may ``cycle'' through the identification of contextual content (the ICI stage) and then retrieve relevant knowledge based on the current context (the KR stage). Similarly, if latent reasoning cannot proceed further due to missing information, the brain may return to the Knowledge Recalling and In-Context Identification stages to gather more information.
+
+We will now draw an analogy between these four steps and the mechanisms of attention heads, as depicted in Figure~\ref{fig:head_taxnomomy}. Previous research has shown that LLMs possess strong contextual learning abilities and have many practical applications \citep{FewShotLearners}. As a result, much of the work on interpretability has focused on the ability of LLMs to capture and reason about contextual information. Consequently, the functions of currently known special attention heads are primarily concentrated in the ICI and LR stages, while there are fewer attention heads that operate in the KR and EP stages.
+
+\input{figures/head_taxonomy}
+
+%% KR阶段
+\subsection{Knowledge Recalling (KR)} \label{subsec:KR}
+For LLMs, most knowledge is learned during the training or fine-tuning phases, which is embedded in the model's parameters. This form of knowledge is often referred to as LLMs' ``parametric knowledge''. Similar to humans, certain attention heads in LLMs recall this internally stored knowledge—such as common sense or domain-specific expertise—to be used in subsequent reasoning. These heads typically retrieve knowledge by making initial guesses or by focusing on specific content within the context, injecting the memory information into the residual stream as initial data.
+
+In \textbf{general tasks}, \citet{AssociativeMemory_23_NIPS_Meta} identified that some attention heads function as \textit{associative memories}, gradually storing and retrieving knowledge during the model's training phase. The so-called \textit{Memory Head} \citep{KnowledgeConflict_24_arXiv_UCAS} can retrieve content related to the current problem from the parametric knowledge. This content could be knowledge learned during pre-training or experience accumulated during previous reasoning processes.
+
+In \textbf{specific task scenarios}, such as when LLMs tackle Multiple Choice Question Answering (MCQA) problems, they may initially use \textit{Constant Head} to evenly distribute attention scores across all options, or they might use \textit{Single Letter Head} to assign a higher attention score to one option while giving lower scores to others, thereby capturing all potential answers \citep{CorrectLetterHead_23_arXiv_DeepMind}.
+
+Additionally, in the context of Binary Decision Tasks (BDT)\footnote{A Binary Decision Task is a problem where the solution space is discrete and contains only two options, such as yes-no questions or answer verification.}, \citet{NegativeHead_24_arXiv_SNU} found that LLMs often exhibit a negative bias when handling such tasks. This could be because the model has learned a significant amount of negative expressions related to similar tasks from prior knowledge during training. Consequently, when the model identifies a given text as a binary task, a \textit{Negative Head} may ``preemptively'' choose the negative answer due to this prior bias.
+
+
+%% ICI阶段
+\subsection{In-Context Identification (ICI)} \label{subsec:ICI}
+Understanding the in-context nature of a problem is one of the most critical process to effectively addressing it. Just as humans read a problem statement and quickly pick up on various key pieces of information, some attention heads in LLMs also focus on these elements. Specifically, attention heads that operate during the ICI stage use their QK matrices to focus on and identify overall structural, syntactic, and semantic information within the in-context. This information is then written into the residual stream via OV matrices.
+
+\subsubsection{Overall Structural Information Identification} \label{sucsubsec:overallstructure}
+Identifying the overall structural information within a context mainly involves LLMs attending to content in special positions or with unique occurrences in the text.
+\textit{Previous Head} \citep{InductionHeads_22_TCT_Anthropic} (also referred to as \textit{Positional Head} in \citep{InformationFlow_24_arXiv_Meta}) attend to the positional relationships within the token sequence. They capture the embedding information of the current token and the previous token.
+\textit{Rare Words Head} \citep{SpecialHead_19_ACL_Russia} focus on tokens that appear with the lowest frequency, emphasizing rare or unique tokens.
+\textit{Duplicate Token Head} excel at capturing repeated content within the context, giving more attention to tokens that appear multiple times \citep{IOI_23_ICLR_Redwood}.
+
+Besides, as LLMs can gradually handle long texts, this is also related to the ``Needle-in-a-Haystack'' capability of attention heads. \textit{(Global) Retrieval Head} can accurately locate specific tokens in long texts \citep{RetrievalHead_24_arXiv_PKU, GlobalAttention_24_arXiv_THU, RetrievalHead_24_arXiv_Huawei}. These heads enable LLMs to achieve excellent reading and in-context retrieval capabilities.
+
+\subsubsection{Syntactic Information Identification} \label{subsubsec:syntactic}
+For syntactic information identification, sentences primarily consist of subjects, predicates, objects, and clauses. \textit{Syntactic Head} can distinctly identify and label nominal subjects, direct objects, adjectival modifiers, and adverbial modifiers.
+Some words in the original sentence may get split into multiple subwords because of the tokenizer (e.g., ``happiness'' might be split into ``happi'' and ``ness''). The \textit{Subword Merge Head} focus on these subwords and merge them into one complete word~\citep{InformationFlow_24_arXiv_Meta}.
+
+Additionally, \citet{KnowledgeCircuit_24_arXiv_ZJU} proposed the \textit{Mover Head} cluster, which can be considered as ``argument parsers''. These heads often copy or transfer sentence's important information (such as the subject's position) to the [END] position\footnote{The [END] position refers to the last token's position in the sentence being decoded by the LLM. Many studies indicate that summarizing contextual information at this position facilitates subsequent reasoning and next-token prediction.}.
+\textit{Name Mover Head} and \textit{Backup Name Mover Head} can move the names in the text to the [END] position.
+\textit{Letter Mover Head} can extract the first letters of certain words in the context and aggregate them at the [END] position \citep{AcronymPredict_24_arXiv_Alicante}.
+Conversely, \textit{Negative Name Mover Head} prevent name information from being transferred to the [END] position \citep{IOI_23_ICLR_Redwood,CopySupression_23_arXiv_Google}.
+
+\subsubsection{Semantic Information Identification} \label{subsubsec:semantic}
+As for semantic information identification,
+\textit{Context Head} \citep{KnowledgeConflict_24_arXiv_UCAS} extract information from the context that is related to the current task.
+Further, \textit{Content Gatherer Head} \citep{CorrectLetterHead_23_arXiv_DeepMind,ColorObject_24_ICLR_BrownU} ``move'' tokens related to the correct answer to the [END] position, preparing to convert them into the corresponding option letter for output.
+The \textit{Sentiment Summarizer} proposed by \citet{Sentiment_23_arXiv_EleutherAI} can summarize adjectives and verbs that express sentiment in the context near the [SUM] position\footnote{[SUM] position is next to [END] position.}, making it easier for subsequent heads to read and reason.
+
+Capturing the message about relationship is also important for future reasoing. \textit{Semantic Induction Head} \citep{Semantic_24_arXiv_SJTU} capture semantic relationships within sentences, such as part-whole, usage, and category-instance relationships.
+\textit{Subject Head} and \textit{Relation Head} \citep{FactualRecall_24_arXiv_Independent} focus on subject attributes and relation attributes, respectively, and then inject these attributes into the residual stream.
+
+% LR阶段
+\subsection{Latent Reasoning (LR)} \label{subsec:LR}
+The KR and ICI stages focus on gathering information, while Latent Reasoning (LR) is where all the collected information is synthesized and logical reasoning occurs. Whether in humans or LLMs, the LR stage is the core of problem-solving. Specifically, QK matrices of a head performs implicit reasoning based on information read from the residual stream, and then the reasoning results or signals are written back into the residual stream through OV matrices.
+
+\subsubsection{In-context Learning} \label{subsubsec:in-context}
+In-context Learning is one of the most widely discussed areas. It primarily includes two types: Task Recognition (TR) and Task Learning (TL) \citep{ICLDisentagle_23_thesis}. Both involve learning from context to infer the problem's solution, but they differ in their reliance on semantic information. TR has labels with clear semantics, such as ``positive'' and ``negative'' in sentiment classification. In contrast, TL depends on learning the specific mapping function between example-label pairs, where the example and label do not have a semantic connection.
+
+For \textbf{Task Recognition}: \textit{Summary Reader} \citep{Sentiment_23_arXiv_EleutherAI} can read the information summarized at the [SUM] position during the ICI stage and use this information to infer the corresponding sentiment label.
+\citet{FunctionVector_24_ICLR_NEU} proposed that the output of certain mid-layer attention heads can combine into a \textit{Function Vector}. These heads abstract the core features and logical relationships of a task, based on the semantic information identified during ICI, and thereby trigger task execution.
+
+For \textbf{Task Learning}, the essence of solving these problems is enabling LLMs to inductively find patterns.
+\textit{Induction Head} is among the most widely studied attention heads \citep{InductionHeads_22_TCT_Anthropic,Markov_24_arXiv_Harvard,FSL_24_ICML_UCL,InductionHead_24_arXiv_UoA}. They capture patterns such as ``… [A][B] … [A]'' where token [B] follows token [A], and predict that the next token should be [B]. Specifically, Induction Head can get information about all tokens in the context and the previous token from Previous Head. It then match this with information at the [END] position to perform further reasoning.
+
+Induction Head tends to strictly follow a pattern once identified and complete fill-in-the-blank reasoning. However, in most cases, the real problem will not be identical to the examples—just as a student's exam paper will not be exactly the same as their homework. To address this, \citet{WordClassification_24_arXiv_UoM} introduced the \textit{In-context Head}, whose QK matrix calculates the similarity between information at the [END] position and each label. The OV matrix then extracts label features and weights them according to the similarity scores to determine the final answer (take all labels into consideration rather than only one label).
+
+\subsubsection{Effective Reasoning} \label{subsubsec:EffectiveReason}
+Some studies have identified heads related to reasoning effectiveness. \textit{Truthfulness Head} \citep{ITI_23_NIPS_harvard, NL-ITI_24_arXiv-Samsung} and \textit{Accuracy Head} \citep{CrossLingual_24_SIGIR_UCAS} are heads highly correlated with the truthfulness and accuracy of answers. They help the model infer truthful and correct results in QA tasks, and modifying the model along their activation directions can enhance LLMs' reasoning abilities.
+
+However, not all heads positively impact reasoning. For example, \textit{Vulnerable Head} \citep{VulnerableHead_24_arXiv_Alicante} are overly sensitive to certain specific input forms, making them susceptible to irrelevant information and leading to incorrect results. During reasoning, it is advisable to minimize the influence of such heads.
+
+\subsubsection{Task Specific Reasoning} \label{subsubsec:TaskSpecific}
+Finally, some heads are specialized for specific tasks.
+In MCQA tasks, \textit{Correct Letter Head} \citep{CorrectLetterHead_23_arXiv_DeepMind} can complete the matching between the answer text and option letters by comparing the index of each option, determining the final answer choice.
+When dealing with tasks related to sequential data, \textit{Iteration Head} \citep{IterationHead_24_arXiv_Meta} can iteratively infer the next intermediate state based on the current state and input.
+For arithmetic problems, \textit{Successor Head} \citep{SuccessorHead_24_ICLR_Cambridge} can perform increment operations on ordinal numbers.
+
+These examples illustrate how various attention heads specialize in different aspects of reasoning, contributing to the overall problem-solving capabilities of LLMs.
+
+
+%% EP阶段
+\subsection{Expression Preparation (EP)} \label{subsec:EP}
+During the Expression Preparation (EP) stage, LLMs need to align their reasoning results with the content that needs to be expressed verbally. Specifically, EP heads may first \textbf{aggregate information} from various stages.
+\citet{FactualRecall_24_arXiv_Independent} proposed the \textit{Mixed Head}, which can linearly combine and aggregate information written into the residual stream by heads from the ICI and LR stages (such as Subject Heads , Relation Heads, Induction Heads, etc.). The aggregated results are then mapped onto the vocabulary logits value via the OV matrix.
+
+Some EP heads have a \textbf{signal amplification} function. Specifically, they read information about the context or reasoning results from the residual stream, then enhance the information that needs to be expressed as output, and write it back into the stream.
+\textit{Amplification Head} \citep{CorrectLetterHead_23_arXiv_DeepMind} and \textit{Correct Head} \citep{CorrectHead_24_arXiv_Allen} amplify the signal of the correct choice letter in MCQA problems near the [END] position. This amplification ensures that after passing through the Unembedding layer and softmax calculation, the correct choice letter has the highest probability.
+
+In addition to information aggregation and signal amplification, some EP heads are used to \textbf{align the model's reasoning results with user's instructions}.
+In multilingual tasks, the model may sometimes fail to respond in the target language that user wanted. \textit{Coherence Head} \citep{CrossLingual_24_SIGIR_UCAS} ensure linguistic consistency in the generated content. They help LLMs maintain consistency between the output language and the language of user's query when dealing with multilingual inputs.
+\textit{Faithfulness Head} \citep{FaithfulCoT_24_ICML_Harvard} are strongly associated with the faithfulness of CoT\footnote{CoT stands for Chain-of-Thought \citep{CoT_22_NIPS_Google}. Faithfulness refers to whether the model's generated response accurately reflects its internal reasoning process and behavior, i.e., the consistency between output and internal reasoning.}. Enhancing the activation of these heads allows LLMs to better align their internal reasoning with the output, making the CoT results more robust and consistent.
+
+However, for some simple tasks, LLMs might not require special EP heads to refine language expression. At this situation, the information written back into the residual stream during the ICI and LR stages may be directly suitable for output, i.e., skip the EP stage and select token with highest probability. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\linewidth]{figures/4periods3layers.pdf}
+    \caption{Diagram of the relationship between the stages where heads act and the layers they are in, as described in Section~\ref{subsec:KR}-\ref{subsec:EP}.}
+    \label{fig:4stage3layer}
+\end{figure}
+
+%% 协同作用，整体机制
+\subsection{How Attention Heads Working Together?} \label{subsec:WorkTogether}
+If we divide the layers of a LLM (e.g., GPT-2 Small) into three segments based on their order—shallow (e.g., layers 1-4), middle (e.g., layers 5-8), and deep (e.g., layers 9-12)—we can map the relationship between the stages where heads act and the layers they are in, according to Section~\ref{subsec:KR}-\ref{subsec:EP}. The figure is illustrated in Figure~\ref{fig:4stage3layer}.
+
+Some researchers have explored the \textbf{potential semantic meanings} embedded in the query vector $\mathbf{q}_{\ell, j}^h=\mathbf{Q}_{\ell}^h[:, j]$ and key vector $\mathbf{k}_{\ell, j}^h=\mathbf{K}_{\ell}^h[:, j]$ when attention heads collaborate. For example, in MCQA problem, during the ICI stage, a Content Gatherer Head moves the tokens of the correct answer text to the [END] position. Then, in the LR stage, the Correct Letter Head uses the information passed by the Content Gatherer Head to identify the correct option. The query vector in this context effectively asks, ``Are you the correct label?'' while recalling the gathered correct answer text. The key vector represents, ``I'm choice [A/B/C/D], with corresponding text [...]''. After matching the right key vector to the query vector, we can get the correct answer choice.
+
+Consider the \textbf{Parity Problem}\footnote{The Parity Problem involves determining the parity (odd or even) of the sum of a given sequence. The sequence only consists of $0$/$1$ values. For instance, the sum of the sequence ``$001011$'' is 3, so it is an odd sequence. Let $s_{i}$ indicates the parity of the sum of first $i$ digits. So the corresponding $s_{\left[0:t\right]}$ to ``$001011$'' is $eeeooeo$, where $e$ represents even and $o$ represents odd. When querying an LLM, the prompt format is ``[$0$/$1$ seq.] [EOI] [$s_{\left[0:t\right]}$] [END]'', with [EOI] as the End-Of-Input token. The expected answer is the final state $s_{t}$.}.
+During the ICI stage, a Mover Head transmits the position of the [EOI] token, which separates the input sequence and the intermediate state sequence, to the [END] position.
+In the LR stage, an Iteration Head first reads the [EOI]'s position index from [END] and uses its query vector to ask, ``Are you position $t$?'' The key vector for each token responds, ``I'm position $t^{'}$.'' This querying process identifies the last digit in the input sequence, which, combined with $s_{t-1}$, allows the model to calculate $s_{t}$.
+
+Further research has explored integrating multiple special attention heads into a \textbf{cohesive working mechanism}. Take the IOI (Indirect Object Identification) task, which tests the model's ability to deduce the indirect object in a sentence, as an example. Figure~\ref{fig:IOIexample} outlines the process.
+\begin{enumerate}
+    \item In the KR stage, the Subject Head and Relation Head focus on ``Mary'' and ``bought flowers for'', respectively, triggering the model to recall that the answer should be a person's name \citep{FactualRecall_24_arXiv_Independent}.
+
+    \item Then in the ICI stage, the Duplicate Head identifies ``John'', while the Name Mover Head focuses on both ``John'' and ``Mary''.
+
+    \item During the iterative stages of ICI and LR, the Previous Head and Induction Head work together to attend to ``John''. All this information is written to the residual stream. Then the Inhibition Head detects that ``John'' appears multiple times and is the subject, thereby suppressing the logits value of ``John''.
+    \item Finally in the stage of EP, the Amplification Head boosts the logits value for ``Mary''.
+\end{enumerate}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\linewidth]{figures/IOIExample.pdf}
+    \caption{Schematic diagram of the collaborative mechanism of different attention heads in IOI task.}
+    \label{fig:IOIexample}
+\end{figure}
+
+
+% Experiment Methods %
+\section{Unveiling the Discovery of Attention Heads} \label{sec:DiscoveryExp}
+How can we uncover the specific functions of those special heads mentioned in Section~\ref{sec:HeadOverview}? In this section, we will unveiling the discovery methods. Current research primarily employs experimental methods to validate the working mechanisms of those heads. We categorize the mainstream experimental approaches into two types based on whether they require the construction of new models: Modeling-Free and Modeling-Required. The classification scheme and method examples are shown in Figure~\ref{fig:piechart}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{figures/piechart.pdf}
+    \caption{Pie chart of methods for exploring special attention heads and diagram of various methods.}
+    \label{fig:piechart}
+\end{figure}
+
+
+\subsection{Modeling-Free} \label{subsec:ModelFree}
+\input{tables/ModelingFree}
+Modeling-Free methods do not require setting up new models, making them widely applicable in interpretability research. These methods typically involve altering a latent state computed during the LLMs' reasoning process and then using Logit Lens to map the intermediate results to token logits or probabilities. By calculating the logit (or probability) difference, researchers can infer the impact of the change. Modeling-Free methods primarily include Activation Patching and Ablation Study. However, due to the frequent interchange of these terms in the literature, a new perspective is required to distinguish them. This paper further divides these methods into Modification-Based and Replacement-Based Methods based on how the latent state representation is altered, as summarized in Table~\ref{tab:ModelingFree}.
+
+\textbf{Modification-Based methods} involve altering the values of a specific latent state while retaining some of the original information.
+Directional Addition retains part of the information in the original state and then directionally adds some additional information. For instance, \citet{Sentiment_23_arXiv_EleutherAI} input texts containing positive and negative sentiments into LLMs, obtaining positive and negative representations from the latent state. The difference between these two representations can be seen as a sentiment direction in the latent space. By adding this sentiment direction vector to the activation of the attention head under investigation, the effect on the output can be analyzed to determine whether the head has the ability to summarize sentiment.
+
+Conversely, Directional Subtraction retains part of the original state information while directionally removing some of it~\citep{SurveyCTG_24_arXiv_RUC}. This method can be used to investigate whether removing specific information from a latent state affects the model's output in a significant way, thereby revealing whether certain attention heads can backup or fix the deleted information.
+
+In contrast to Modification-Based methods, \textbf{Replacement-Based methods} discard all information in a specific latent state and replace it with other values.
+Zero Ablation and Mean Ablation replace the original latent state with zero values or the mean value of latent states across all samples from a dataset, respectively. This can logically ``eliminate'' the head or cause it to lose its special function, allowing researchers to assess its importance.
+
+Naive Activation Patching is the traditional patching method. It involves using a latent state obtained from a corrupted prompt to replace the original latent state at the corresponding position. For example, consider the original prompt ``John and Mary went to the store.'' Replacing ``Mary'' with ``Alice'' results in a corrupted prompt. By systematically replacing the latent state obtained under the original prompt with the one obtained under the corrupted prompt across each head, researchers can preliminarily determine which head has the ability to focus on names based on the magnitude of the impact \citep{ActivationPatching_24_arXiv_Google, ActivationPatching_24_ICLR_Google}.
+
+
+\subsection{Modeling-Required} \label{subsec:ModelRequired}
+\input{tables/ModelingRequired}
+Modeling-Required methods involve explicitly constructing models to delve deeper into the functions of specific heads. Based on whether the newly constructed models require training, we further categorize Modeling-Required methods into Training-Required and Training-Free methods, as summarized in Table~\ref{tab:ModelingRequired}.
+
+\textbf{Training-Required methods} necessitate training the newly established models to explore mechanisms.
+Probing is a common training-based method. This approach extracts activation values from different heads as features and categorizes heads into different classes as labels. A classifier is then trained on this data to learn the relationship between the activation patterns and the head's function. Subsequently, the trained classifier can serve as a probe to detect which heads within the LLMs possess which functions \citep{SemanticConsistency_24_ACL_TJU, ITI_23_NIPS_harvard}.
+
+Another approach involves training a simplified transformer model on a clean dataset for a specific task. Researchers investigate whether the heads in this simplified model exhibit certain functionalities, which can then be extrapolated whether similar heads in the original model possess the same capabilities. This method reduces computational costs during training and analysis, while the constructed model remains simple and highly controllable \citep{IterationHead_24_arXiv_Meta}.
+
+\textbf{Training-Free methods} primarily involve designing scores that reflect specific phenomena. These scores can be viewed as mathematical models that construct an intrinsic relationship between the attributes of components and certain model characteristics or behaviors.
+For instance, when investigating Retrieval Heads, \citet{RetrievalHead_24_arXiv_PKU} defined a Retrieval Score. This score represents the frequency with which a head assigns the highest attention score to the token it aims to retrieve across a sample set, as shown in Equation~\ref{equ:RetrievalScore}. A high Retrieval Score indicates that the head possesses a strong ``Needle in a Haystack'' ability.
+
+Similarly, when exploring Negative Heads, \citet{NegativeHead_24_arXiv_SNU} introduced the Negative Attention Score (NAS), as shown in Equation~\ref{equ:NAS}. Here, $i$ denotes the $i$-th token in the input prompt, and $t_{Yes}$ and $t_{No}$ represent the positions of ``Yes'' and ``No'' in the prompt, respectively. A high NAS suggests that the head focuses more on negative tokens during decision-making, making it prone to generating negative signals.
+\begin{equation} \label{equ:RetrievalScore}
+\text{RetrievalScore}_{\ell}^{h} = \frac{|\mathcal{D}_{right} \cap \mathcal{D}_{all}|}{|\mathcal{D}_{all}|}
+\end{equation}
+\begin{equation} \label{equ:NAS}
+\text{NAS}_{\ell}^{h} = \sum_{i}{\left(Attn_{\ell}^{h}\left[i, t_{Yes}\right] + Attn_{\ell}^{h}\left[i, t_{No}\right]\right) \cdot \log{\left(\frac{Attn_{\ell}^{h}\left[i, t_{No}\right]}{Attn_{\ell}^{h}\left[i, t_{Yes}\right]}\right)}}
+\end{equation}
+
+In addition to scoring, researchers have proposed other novel training-free modeling methods.
+\citet{InformationFlow_24_arXiv_Meta} introduced the concept of an Information Flow Graph, where nodes represent tokens and edges represent information transfer between tokens via attention heads or FFNs. By calculating and filtering the importance of each edge to the node it points to, key edges can be selected to form a subgraph. This subgraph can then be viewed as the primary internal mechanism through which LLMs perform reasoning.
+
+
+% Evaluation %
+\section{Evaluation} \label{sec:Evaluation}
+This section summarizes the benchmarks and datasets used in the interpretability research of attention heads. Based on the different evaluation goals during the mechanism exploration process, we categorize them into two types: Mechanism Exploration Evaluation and Common Evaluation. The former is designed to evaluate the working mechanisms of specific attention heads, while the latter assesses whether enhancing or suppressing the functions of certain special heads can improve the overall performance of LLMs.
+\input{tables/Eval}
+
+\subsection{Mechanism Exploration Evaluation}
+To delve deeper into the internal reasoning paths of LLMs, many researchers have synthesized new datasets based on existing benchmarks. The primary feature of these datasets is the simplification of problem difficulty, with elements unrelated to interpretability, such as problem length and query format, being standardized. As shown in Table~\ref{tab:MechanismEval}, these datasets essentially evaluate the model's knowledge reasoning and knowledge recalling capabilities, but they simplify the answers from a paragraph-level to a token-level.
+
+Take exploring sentiment-related heads as an example, \citet{Sentiment_23_arXiv_EleutherAI} created the ToyMovieReview and ToyMoodStory datasets, with specific prompt templates illustrated in Figure~\ref{fig:SentimentPrompt}. Using these datasets, researchers employed sampling methods to calculate the activation differences of each head for positive and negative sentiments. This allowed them to identify heads with significant differences as potential candidates for the role of Sentiment Summarizers.
+\input{figures/SentimentPrompt}
+
+\subsection{Common Evaluation}
+The exploration of attention head mechanisms is ultimately aimed at improving the comprehensive capabilities of LLMs. Many researchers, upon identifying a head with a specific function, have attempted to modify that type of head—such as by enhancing or diminishing its activation—to observe whether the LLMs' responses become more accurate and useful. We classify these Common Evaluation Benchmarks based on their evaluation focus, as shown in Table~\ref{tab:CommonEval}. The special attention heads discussed in this paper are closely related to improving LLMs' abilities in four key areas: knowledge reasoning, sentiment analysis, long context retrieval, and text comprehension.
+
+
+\section{Additional Topics} \label{sec:other_tasks}
+In this section, we summarize various works related to the LLMs interpretability. Although these works may not introduce new special heads as discussed in Section~\ref{sec:HeadOverview}, they delve into the underlying mechanisms of LLMs from other perspectives. We will elaborate on these studies under two categories: FFN Interpretability and Machine Psychology.
+
+\subsection{FFN Interpretability} \label{subsec:OtherComponent}
+As discussed in Section~\ref{sec:background}, apart from attention heads, FFNs also plays a significant role in the LLMs reasoning process. This section primarily summarizes research focused on the mechanisms of FFNs and the collaborative interactions between attention heads and FFNs.
+
+One of the primary functions of FFNs is to store knowledge acquired during the pre-training phase. 
+\citet{MLPKnowledge} proposed that factual knowledge stored within the model is often concentrated in a few neurons of the MLP.
+\citet{TransformerKVpair} observed that the neurons in the FFN of GPT models can be likened to key-value pairs, where specific keys can retrieve corresponding values, i.e., knowledge.
+\citet{FactualRecall_24_arXiv_RUC} discovered a hierarchical storage of knowledge within the model's FFN, with lower layers storing syntactic and semantic information, and higher layers storing more concrete factual content.
+
+FFNs effectively complement the capabilities of attention heads across the four stages described in Section~\ref{sec:HeadOverview}. The collaboration between FFNs and attention heads enhances the overall capabilities of LLMs.
+\citet{FacutalRecall_23_EMNLP_Google} proposed that attention heads and FFNs can work together to enrich the representation of a subject and then extract its related attributes, thus facilitating factual information retrieval during the Knowledge Recall (KR) stage.
+\citet{MLPLocalUpdate_23_EMNLP_ETH} found that, unlike attention heads, which focus on global information and perform aggregation, FFNs focus only on a single representation and perform local updates. This complementary functionality allows them to explore textual information both in breadth (attention heads) and depth (FFNs).
+
+In summary, each component of LLMs plays a crucial role in the reasoning process. The individual contributions of these components, combined with their interactions, accomplish the entire process from Knowledge Recalling to Expression.
+
+
+\subsection{Machine Psychology} \label{subsec:MachinePsychology}
+Current research on the LLMs interpretability often draws parallels between the reasoning processes of these models and human thinking. This suggests the need for a more unified framework that connects LLMs with human cognition. The concept of Machine Psychology has emerged to fill this gap \citep{MachinePsychologyOrigin}, exploring the cognitive activities of AI through psychological paradigms.
+
+Recently, \citet{MachinePsychology_Hagendorff} and \citet{MachinePsychology_Johansson} have proposed different approaches to studying machine psychology.
+Hagendorff's work focuses on using psychological methods to identify new abilities in LLMs, such as heuristics and biases, social interactions, language understanding, and learning. His research suggests that LLMs display human-like cognitive patterns, which can be analyzed to improve AI interpretability and performance.
+
+Johansson's framework integrates principles of operant conditioning~\citep{OperantConditioning} with AI systems, emphasizing adaptability and learning from environmental interactions. This approach aims to bridge gaps in AGI research by combining insights from psychology, cognitive science, and neuroscience.
+
+Overall, Machine Psychology provides a new perspective for analyzing LLMs. Psychological experiments and behavioral analyses may lead to new discoveries about these models. As LLMs are increasingly applied across various domains of society, understanding their behavior through a psychological lens becomes increasingly important, which offers valuable insights for developing more intelligent AI systems.
+
+
+\section{Conclusion} \label{sec:Discussion}
+\subsection{Limitations in Current Research}
+Firstly, we observe that the application scenarios explored in current research are relatively simple and limited to specific types of tasks, lacking generalizability. For instance, studies like \citep{IOI_23_ICLR_Redwood} and \citep{ColorObject_24_ICLR_BrownU} have discovered reasoning circuits in LLMs through tasks such as the IOI task and the Color Object Task. However, these circuits have not been validated across other tasks, making it difficult to prove whether these mechanisms are universally applicable.
+
+Secondly, most research focuses on the mechanisms of individual heads, with only a few researchers delving into the collaborative relationships among multiple heads. As a result, the existing work lacks a comprehensive framework for understanding the coordinated functioning of all the attention heads in LLMs.
+
+Finally, the conclusions of most studies lack mathematical proofs. Many studies start by proposing a hypothesis about a circuit or mechanism based on an observed phenomenon, followed by experiments designed to validate the hypothesis. The downside of this research approach is that experiments cannot establish the theoretical soundness of the mechanism, nor can they determine whether the mechanism is merely coincidental.
+
+\subsection{Future Directions and Challenges}
+Building on the limitations discussed above and the content presented earlier, this paper outlines several potential research directions for the future:
+\begin{itemize}
+    \item \textbf{Exploring mechanisms in more complex tasks}. Investigate whether certain attention heads possess special functions in more complex tasks, such as open-ended question answering, math problems.
+    
+    \item \textbf{Mechanism's robustness against prompts}. Research has shown that current LLMs are highly sensitive to prompts, with slight changes potentially leading to opposite responses \citep{xFinder_24_arXiv_IAAR}. Future work could analyze this phenomenon through the lens of attention head mechanisms and propose solutions to mitigate this issue.
+    
+    \item \textbf{Developing new experimental methods}. Explore new experimental approaches, such as designing experiments to verify whether a particular mechanism is indivisible or whether it has universal applicability.
+    
+    \item \textbf{Building a Comprehensive Interpretability Framework}. This framework should encompass both the independent and collaborative functioning mechanisms of most attention heads and other components.
+    
+    \item \textbf{Integrating Machine Psychology}. Incorporate insights from Machine Psychology to construct an internal mechanism framework for LLMs from an anthropomorphic perspective, understanding the gaps between current LLMs and human cognition and guiding targeted improvements.
+\end{itemize}
+
+
+\section{Limitation} \label{sec:Limitation}
+Current research on the interpretability of LLMs’ attention heads is relatively scattered, primarily focusing on the functions of individual heads, with a lack of overarching frameworks. As a result, the categorization of attention head functions from the perspective of human cognitive behavior in this paper may not be perfectly orthogonal, potentially leading to some overlap between different stages.
+
+
+%% Reference
+\bibliographystyle{unsrtnat}
+\bibliography{references} 
+
+
+% %% Appendix
+% \appendix
+% \input{appendix}
+
+
+\end{document}
