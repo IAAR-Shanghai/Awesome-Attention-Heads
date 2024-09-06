@@ -1,27 +1,76 @@
-﻿<h2 align='center'> Awesome-Attention-Heads </h2>
+﻿<h2 align='center'> Attention Heads of Large Language Models: A Survey (Awesome Attention Heads) </h2>
+
 <div align='center'>
-
-[![Awesome Attention Heads](https://img.shields.io/static/v1?label=&message=Awesome+Attention+Heads&color=black&logo=awesomelists)](https://github.com/IAAR-Shanghai/Awesome-Attention-Heads) ![](https://img.shields.io/github/last-commit/IAAR-Shanghai/Awesome-Attention-Heads?color=green)
-
+<p align="center">
+    <!-- Awesome badges-->
+    <a href="https://github.com/IAAR-Shanghai/Awesome-Attention-Heads">
+      <img src="https://img.shields.io/static/v1?label=&message=Awesome+Attention+Heads&color=black&logo=awesomelists">
+    </a>
+    <!-- arxiv badges -->
+    <a href="https://arxiv.org/abs/2409.03752">
+        <img src="https://img.shields.io/badge/Paper-red?style=flat&logo=arxiv">
+    </a>
+    <!-- hf -->
+    <a href="https://huggingface.co/papers/2409.03752">
+      <img src="https://img.shields.io/badge/-%F0%9F%A4%97%20Hugging_Face-orange?style=flat"/>
+    </a>
+    <!-- Last commit -->
+    <img src="https://img.shields.io/github/last-commit/IAAR-Shanghai/Awesome-Attention-Heads?color=green">
+</p>
 </div>
 
-Welcome to **Awesome-Attention-Heads**! This is a platform to get the latest research on different kinds of LLM's Attention Heads. We hope to provide complete and clear cutting-edge informations for researchers studying LLM interpretability and LLM hallucination. We will be grateful if you can :star: the project or commit a PR!
+<div align="center">
+    <p>
+        <a href="https://github.com/fan2goa1">Zifan Zheng</a><sup>1*</sup>, 
+        <a href="https://github.com/wyzh0912">Yezhaohui Wang</a><sup>1*</sup>, 
+        <a href="https://github.com/saythe17">Yuxin Huang</a><sup>2*</sup>, 
+        <a href="https://github.com/Ki-Seki">Shichao Song</a><sup>1</sup>, 
+        Bo Tang<sup>1</sup>,
+        Feiyu Xiong<sup>1</sup>,
+        Zhiyu Li<sup>1†</sup>
+    </p>
+    <p>
+        <sup>1</sup><a href="https://www.iaar.ac.cn/">Institute for Advanced Algorithms Research (IAAR), Shanghai</a>, <br>
+        <sup>2</sup><a href="https://air.tsinghua.edu.cn">Institute for AI Industry Research (AIR), Tsinghua University</a>
+    </p>
+</div>
 
-### Background
-With the development of large language models, their underlying network structure, the Transformer, is being extensively studied. Researching the Transformer structure helps us enhance our understanding of this "black box" and improve model interpretability. Recently, there has been an increasing body of work suggesting that the model contains two distinct partitions: attention mechanisms used for behavior, inference, and analysis, and feed-forward networks (FFN) for knowledge storage. The former is crucial for revealing the functional capabilities of the model, leading to a series of studies exploring various functions within attention mechanisms, which we have termed **Attention Head Mining**.
+<div align="center">
+<p>
+<sup>*</sup>Equal contribution.
+<br>
+<sup>†</sup>Corresponding author: Zhiyu Li (<a href="mailto:lizy@iaar.ac.cn">lizy@iaar.ac.cn</a>).
+</p>
+</div>
 
-### Table of Contents
+> \[!IMPORTANT\]
+>
+> 🌟 **Star Us!** If you find our work helpful, please consider staring our GitHub to stay updated with the latest content in this Awesome repo!🌟
+> :computer: **About this repo.** This is a platform to get the latest research on different kinds of LLM's Attention Heads. Also, we released a survey based on these fantastic works. :computer:
+
+## 📢 News
+- **[2024/09/06]** Our survey paper is available on the arXiv platform: https://arxiv.org/abs/2409.03752.
+
+## Table of Contents
+- [Background](#background)
+- [About Our Survey](#about-our-survey)
 - [Latest Papers](#lastest-papers)
 - [Star Trends](#star-star-trends)
 
-### Lastest Papers
+## Background
+With the development of Large Language Model (LLMs), their underlying network structure, the Transformer, is being extensively studied. Researching the Transformer structure helps us enhance our understanding of this "black box" and improve model interpretability. Recently, there has been an increasing body of work suggesting that the model contains two distinct partitions: attention mechanisms used for behavior, inference, and analysis, and Feed-Forward Networks (FFN) for knowledge storage. The former is crucial for revealing the functional capabilities of the model, leading to a series of studies exploring various functions within attention mechanisms, which we have termed **Attention Head Mining**.
+
+## About Our Survey
+
+
+## Lastest Papers
 Papers below are ordered by **publication date**:
 
-#### Year 2024
+### Year 2024
 
 | Date | Paper & Summary | Tags | Links |
 | --- | --- | --- | --- |
-| 2024-08-01 | **Enhancing Semantic Consistency of Large Language Models through Model Editing: An Interpretability-Oriented Approach**<br><sub>&nbsp;&nbsp;• Introduces a cost-effective model editing approach focusing on attention heads to enhance semantic consistency in LLMs without extensive parameter changes.<br>&nbsp;&nbsp;• Analyzed attention heads, injected biases, and tested on NLU and NLG datasets.<br>&nbsp;&nbsp;• Achieved notable improvements in semantic consistency and task performance, with strong generalization across additional tasks.</sub> | ![](https://img.shields.io/badge/Consistency_Head-blue)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | [![Paper](https://img.shields.io/badge/ACL_Findings-Paper-%23D2691E)](https://aclanthology.org/2024.findings-acl.199/) |
+| 2024-08-01 | **Enhancing Semantic Consistency of Large Language Models through Model Editing: An Interpretability-Oriented Approach**<br><sub>&nbsp;&nbsp;• Introduces a cost-effective model editing approach focusing on attention heads to enhance semantic consistency in LLMs without extensive parameter changes.<br>&nbsp;&nbsp;• Analyzed attention heads, injected biases, and tested on NLU and NLG datasets.<br>&nbsp;&nbsp;• Achieved notable improvements in semantic consistency and task performance, with strong generalization across additional tasks.</sub> | ![](https://img.shields.io/badge/Consistency_Head-blue)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | [![Paper](https://img.shields.io/badge/ACL_Findings-Paper-%23D2691E)](https://aclanthology.org/2024.findings-acl.199/)&nbsp;&nbsp; |
 | 2024-07-31 | **Correcting Negative Bias in Large Language Models through Negative Attention Score Alignment**<br><sub>&nbsp;&nbsp;• Introduced Negative Attention Score (NAS) to quantify and correct negative bias in language models.<br>&nbsp;&nbsp;• Identified negatively biased attention heads and proposed Negative Attention Score Alignment (NASA) for fine-tuning.<br>&nbsp;&nbsp;• NASA effectively reduced the precision-recall gap while preserving generalization in binary decision tasks.</sub> | ![](https://img.shields.io/badge/Negative_Head-blue) | [![Paper](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/abs/2408.00137) |
 | 2024-07-29 | **Detecting and Understanding Vulnerabilities in Language Models via Mechanistic Interpretability**<br><sub>&nbsp;&nbsp;• Introduces a method using Mechanistic Interpretability (MI) to detect and understand vulnerabilities in LLMs, particularly adversarial attacks.<br>&nbsp;&nbsp;• Analyzes GPT-2 Small for vulnerabilities in predicting 3-letter acronyms.<br>&nbsp;&nbsp;• Successfully identifies and explains specific vulnerabilities in the model related to the task.</sub> | ![](https://img.shields.io/badge/Vulnerable_Head-blue) | [![Paper](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/abs/2407.19842) |
 | 2024-07-22 | **RazorAttention: Efficient KV Cache Compression Through Retrieval Heads**<br><sub>&nbsp;&nbsp;• Introduced RazorAttention, a training-free KV cache compression technique using retrieval heads and compensation tokens to preserve critical token information.<br>&nbsp;&nbsp;• Evaluated RazorAttention on large language models (LLMs) for efficiency.<br>&nbsp;&nbsp;• Achieved over 70% KV cache size reduction with no noticeable performance impact.</sub> | ![](https://img.shields.io/badge/Retrieval_Head-blue) | [![Paper](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/abs/2407.15891) |
@@ -46,7 +95,7 @@ Papers below are ordered by **publication date**:
 | 2024-01-16 | **Successor Heads: Recurring, Interpretable Attention Heads In The Wild**<br><sub>&nbsp;&nbsp;• The paper introduces "Successor Heads," attention heads in LLMs that increment tokens with natural orderings, like days or numbers.<br>&nbsp;&nbsp;• It analyzes the formation of successor heads across various model sizes and architectures, such as GPT-2 and Llama-2.<br>&nbsp;&nbsp;• Successor heads are found in models ranging from 31M to 12B parameters, revealing abstract, recurring numeric representations.</sub> | ![](https://img.shields.io/badge/Successor_Head-blue) | [![Paper](https://img.shields.io/badge/ICLR-Poster-%23D2691E)](https://openreview.net/forum?id=kvcbV8KQsi) |
 | 2024-01-16 | **Function Vectors in Large Language Models**<br><sub>&nbsp;&nbsp;• The article introduces "Function Vectors (FVs)," compact, causal representations of tasks within autoregressive transformer models.<br>&nbsp;&nbsp;• FVs were tested across diverse in-context learning (ICL) tasks, models, and layers.<br>&nbsp;&nbsp;• FVs can be summed to create vectors that trigger new, complex tasks, demonstrating internal vector composition.</sub> | ![](https://img.shields.io/badge/Function_Vector_Head-blue) | [![Paper](https://img.shields.io/badge/ICLR-Paper-%23D2691E)](https://openreview.net/forum?id=AwyxtyMwaG&noteId=6Qv7kx00La) [![Project](https://img.shields.io/badge/Git-Page-black?logo=internet-explorer)](https://functions.baulab.info/) [![Code](https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github)](https://github.com/ericwtodd/function_vectors) [![Data](https://img.shields.io/badge/GitHub-Data-brightgreen?logo=github)](https://github.com/ericwtodd/function_vectors/tree/main/dataset_files) |
 
-#### Year 2023
+### Year 2023
 | Date | Paper & Summary | Tags | Links |
 | --- | --- | --- | --- |
 | 2023-10-23 | **Linear Representations of Sentiment in Large Language Models**<br><sub>&nbsp;&nbsp;• The paper identifies a linear direction in activation space that captures sentiment representation in Large Language Models (LLMs).<br>&nbsp;&nbsp;• They isolated this sentiment direction and tested it on tasks including Stanford Sentiment Treebank.<br>&nbsp;&nbsp;• Ablating this sentiment direction leads to a 76% reduction in classification accuracy, highlighting its importance.</sub> | ![](https://img.shields.io/badge/Direct_effect_Head-blue)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | [![Paper](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/abs/2310.15154) |
@@ -56,7 +105,7 @@ Papers below are ordered by **publication date**:
 | 2023-07-18 | **Does Circuit Analysis Interpretability Scale? Evidence from Multiple Choice Capabilities in Chinchilla**<br><sub>&nbsp;&nbsp;• Scalable circuit analysis applied to a 70B Chinchilla language model for understanding multiple-choice question answering.<br>&nbsp;&nbsp;• Logit attribution, attention pattern visualization, and activation patching to identify and categorize key attention heads.<br>&nbsp;&nbsp;• Identified "Nth item in an enumeration" feature in attention heads, though it's only a partial explanation.</sub> | ![](https://img.shields.io/badge/Correct_Letter_Head-blue) ![](https://img.shields.io/badge/Content_Gatherer_Head-blue) ![](https://img.shields.io/badge/Amplification_Head-blue) ![](https://img.shields.io/badge/Constant_Head-blue) ![](https://img.shields.io/badge/Single_Letter_Head-blue) | [![Paper](https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv)](https://arxiv.org/abs/2307.09458) |
 | 2023-02-02 | **Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small**<br><sub>&nbsp;&nbsp;• The paper introduces a detailed explanation of how GPT-2 small performs indirect object identification (IOI) using a large circuit involving 28 attention heads grouped into 7 classes.<br>&nbsp;&nbsp;• They reverse-engineered the IOI task in GPT-2 small using causal interventions and projections.<br>&nbsp;&nbsp;• The study demonstrates that mechanistic interpretability of large language models is feasible.</sub> | ![](https://img.shields.io/badge/Induction_Head-blue)  ![](https://img.shields.io/badge/S--Inhibition_Head-blue) ![](https://img.shields.io/badge/Name_Mover_Head-blue) ![](https://img.shields.io/badge/Previous_Token_Head-blue) ![](https://img.shields.io/badge/Duplicate_Token_Head-blue) ![](https://img.shields.io/badge/Negative_Name_Mover_Head-blue) ![](https://img.shields.io/badge/Backup_Name_Mover_Head-blue) | [![Paper](https://img.shields.io/badge/ICLR-Paper-%23D2691E)](https://openreview.net/forum?id=NpsVSN6o4ul) [![Code](https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github)](https://github.com/redwoodresearch/Easy-Transformer) |
 
-#### Before ChatGPT Announced
+### Before ChatGPT Announced
 | Date | Paper & Summary | Tags | Links |
 | --- | --- | --- | --- |
 | 2022-03-08 | **In-context Learning and Induction Heads**<br><sub>&nbsp;&nbsp;• The paper identifies "induction heads" in Transformer models, which enable in-context learning by recognizing and copying patterns in sequences.<br>&nbsp;&nbsp;• Analyzes attention patterns and induction heads across various layers in different Transformer models.<br>&nbsp;&nbsp;• Found that induction heads are crucial for enabling Transformers to generalize and perform in-context learning tasks effectively.</sub> | ![](https://img.shields.io/badge/Induction_Head-blue)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | [![Paper](https://img.shields.io/badge/Anthropic-Paper-%23D2691E)](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html) |
