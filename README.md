@@ -45,11 +45,13 @@
 
 > \[!IMPORTANT\]
 >
-> 🌟 **Star Us!** If you find our work helpful, please consider staring our GitHub to stay updated with the latest content in this Awesome repo!🌟
+> - 🌟 **Star Us!** If you find our work helpful, please consider staring our GitHub to stay updated with the latest content in this Awesome repo!
 > 
-> :computer: **About this repo.** This is a platform to get the latest research on different kinds of LLM's Attention Heads. Also, we released a survey based on these fantastic works. :computer:
+> - **About this repo.** This is a platform to get the latest research on different kinds of LLM's Attention Heads. Also, we released a survey based on these fantastic works.
 >
-> ✏️ If you only want to see the related paper list, please jump directly to [here](#lastest-papers). ✏️
+> - If you want to **cite our work**, here is our bibtex entry: [CITATION.bib](./CITATION.bib).
+>
+> - If you only want to see the related **paper list**, please jump directly to [here](#lastest-papers).
 
 ## 📢 News
 - **[2024/09/06]** Our survey paper is available on the arXiv platform: https://arxiv.org/abs/2409.03752.
@@ -64,6 +66,7 @@
 With the development of Large Language Model (LLMs), their underlying network structure, the Transformer, is being extensively studied. Researching the Transformer structure helps us enhance our understanding of this "black box" and improve model interpretability. Recently, there has been an increasing body of work suggesting that the model contains two distinct partitions: attention mechanisms used for behavior, inference, and analysis, and Feed-Forward Networks (FFN) for knowledge storage. The former is crucial for revealing the functional capabilities of the model, leading to a series of studies exploring various functions within attention mechanisms, which we have termed **Attention Head Mining**.
 
 ## About Our Survey
+In this survey, we delve into the potential mechanisms of how attention heads in LLMs contribute to the reasoning process.
 
 
 ## Lastest Papers
