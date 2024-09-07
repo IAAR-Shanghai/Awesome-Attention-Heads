@@ -54,6 +54,7 @@
 > - If you only want to see the related **paper list**, please jump directly to [here](#lastest-papers).
 
 ## 📢 News
+- **[2024/09/07]** Our paper secured the 2nd place on [Hugging Face's Daily Paper List](https://huggingface.co/papers?date=2024-09-06).
 - **[2024/09/06]** Our survey paper is available on the arXiv platform: https://arxiv.org/abs/2409.03752.
 
 ## Table of Contents
