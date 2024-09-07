@@ -60,7 +60,7 @@
 ## Table of Contents
 - [Background](#background)
 - [About Our Survey](#about-our-survey)
-- [Latest Papers](#lastest-papers)
+- [Paper List](#paper-list)
 - [Star Trends](#star-star-trends)
 
 ## Background
@@ -69,11 +69,22 @@ With the development of Large Language Model (LLMs), their underlying network st
 ## About Our Survey
 In this survey, we delve into the potential mechanisms of how attention heads in LLMs contribute to the reasoning process.
 
+
+**Highlights:**
+- We propose an innovative **four-stage framework**, inspired by human cognitive neuroscience, to analyze the reasoning process of LLMs (Knowledge Recalling, In-Context Identification, Latent Reasoning, Expression Preparation).
 <div align="center">
-    <img src="assets/four_steps.png" alt="Survey Framework" width="85%">
+    <img src="assets/four_steps.png" alt="Survey Framework" width="70%">
 </div>
 
-## Lastest Papers
+- We classify current research on the interpretability of LLM attention heads according to the four-stage framework and d explore the **collaborative mechanisms** among them.
+- We provide a comprehensive summary and classification of the **experimental methodologies**
+<div align="center">
+    <img src="assets/piechart.jpg" alt="Survey Framework" width="72%">
+</div>
+
+- We summary the limitations of current research in this field and propose **directions for future research**.
+
+## Paper List
 Papers below are ordered by **publication date**:
 
 ### Year 2024
