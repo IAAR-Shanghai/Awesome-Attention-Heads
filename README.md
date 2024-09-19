@@ -1,4 +1,4 @@
-﻿<h2 align='center'> Attention Heads of Large Language Models: A Survey<br>(Awesome Attention Heads) </h2>
+<h2 align='center'> Attention Heads of Large Language Models: A Survey<br>(Awesome Attention Heads) </h2>
 
 <div align='center'>
 <p align="center">
@@ -231,6 +231,22 @@ Papers below are ordered by **publication date**:
         • Tested these strategies across multiple benchmarks to evaluate their effectiveness.<br>
         • Found only limited success in enhancing CoT faithfulness, highlighting the challenge in achieving truly faithful reasoning in LLMs.
       </td>
+    </tr>
+    <tr>
+        <td rowspan="2" style="width: 15%;">2024-06-03</td>
+        <td style="width: 55%;"><strong>LoFiT: Localized Fine-tuning on LLM Representations</strong></td>
+        <td style="width: 15%;"><img src="https://img.shields.io/badge/Accuracy_Head-blue" alt="Accuracy Head Badge"></td>
+        <td style="width: 15%;">
+        <a href="https://arxiv.org/abs/2406.01563"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+        <a href="https://github.com/fc2869/lo-fit"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
+      </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+          • Introduces Localized Fine-tuning on LLM Representations (LoFiT), a two-step framework to identify important attention heads of a given task and learn task-specific offset vectors to intervene on the representations of the identified heads.<br>
+          • Identified sparse sets of important attention heads for improving downstream accuracy on truthfulness and reasoning <br>
+          • LoFiT outperformed other representation intervention methods and achieved comparable performance to PEFT methods on TruthfulQA, CLUTRR, and MQuAKE, despite only intervening on 10% of the total attention heads in LLMs. 
+        </td>
     </tr>
     <tr>
       <td rowspan="2" style="width: 15%;">2024-05-28</td>
