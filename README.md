@@ -19,7 +19,7 @@
 </p>
 </div>
 
-<div align="center">
+<!-- <div align="center">
     <p>
         <a href="https://github.com/fan2goa1">Zifan Zheng</a><sup>1*</sup>, 
         <a href="https://github.com/wyzh0912">Yezhaohui Wang</a><sup>1*</sup>, 
@@ -33,21 +33,21 @@
         <sup>1</sup><a href="https://www.iaar.ac.cn/">Institute for Advanced Algorithms Research (IAAR), Shanghai</a>, <br>
         <sup>2</sup><a href="https://air.tsinghua.edu.cn">Institute for AI Industry Research (AIR), Tsinghua University</a>
     </p>
-</div>
+</div> -->
 
-<div align="center">
+<!-- <div align="center">
 <p>
 <sup>*</sup>Equal contribution.
 <br>
 <sup>†</sup>Corresponding author: Zhiyu Li (<a href="mailto:lizy@iaar.ac.cn">lizy@iaar.ac.cn</a>).
 </p>
-</div>
+</div> -->
 
 > \[!IMPORTANT\]
 >
 > - 🌟 **Star Us!** If you find our work helpful, please consider staring our GitHub to stay updated with the latest content in this Awesome repo!
 > 
-> - **About this repo.** This is a platform to get the latest research on different kinds of LLM's Attention Heads. Also, we released a survey based on these fantastic works.
+> - About this repo. This is a platform to get the **latest research** on different kinds of LLM's Attention Heads. Also, we released a survey based on these fantastic works.
 >
 > - If you want to **cite our work**, here is our bibtex entry: [CITATION.bib](./CITATION.bib).
 >
@@ -96,6 +96,19 @@ Papers below are ordered by **publication date**:
       <td><strong>Paper & Summary</strong></td>
       <td><strong>Tags</strong></td>
       <td><strong>Links</strong></td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="width: 15%;">2024-09-09</td>
+      <td style="width: 55%;"><strong>Unveiling Induction Heads: Provable Training Dynamics and Feature Learning in Transformers</strong></td>
+      <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
+      <td style="width: 15%;"><a href="https://arxiv.org/abs/2409.10559"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        • The paper introduces a generalized induction head mechanism, explaining how transformer components collaborate to perform in-context learning (ICL) on n-gram Markov chains.<br>
+        • It analyzes a two-attention-layer transformer with gradient flow to predict tokens in Markov chains.<br>
+        • Gradient flow converges, enabling ICL through a learned feature-based induction head mechanism.
+      </td>
     </tr>
     <tr>
       <td rowspan="2" style="width: 15%;">2024-08-01</td>
