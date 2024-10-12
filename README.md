@@ -111,6 +111,19 @@ Papers below are ordered by **publication date**:
       </td>
     </tr>
     <tr>
+      <td rowspan="2" style="width: 15%;">2024-08-16</td>
+      <td style="width: 55%;"><strong>A Mechanistic Interpretation of Syllogistic Reasoning in Auto-Regressive Language Models</strong></td>
+      <td style="width: 15%;"><img src="https://img.shields.io/badge/Inhibition_Head-blue" alt="Inhibition Head Badge"></td>
+      <td style="width: 15%;"><a href="https://arxiv.org/abs/2408.08590"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        • The study introduces a mechanistic interpretation of syllogistic reasoning in LMs, identifying content-independent reasoning circuits.<br>
+        • Circuit discovery for reasoning and investigating belief bias contamination in attention heads.<br>
+        • Identified a necessary reasoning circuit transferable across syllogistic schemes, but susceptible to contamination by pre-trained world knowledge.
+      </td>
+    </tr>
+    <tr>
       <td rowspan="2" style="width: 15%;">2024-08-01</td>
       <td style="width: 55%;"><strong>Enhancing Semantic Consistency of Large Language Models through Model Editing: An Interpretability-Oriented Approach</strong></td>
       <td style="width: 15%;"><img src="https://img.shields.io/badge/Consistency_Head-blue" alt="Consistency Head Badge"></td>
@@ -496,6 +509,19 @@ Papers below are ordered by **publication date**:
       <td><strong>Links</strong></td>
     </tr>
     <tr>
+      <td rowspan="2" style="width: 15%;">2023-12-23</td>
+      <td style="width: 55%;"><strong>Fact Finding: Attempting to Reverse-Engineer Factual Recall on the Neuron Level</strong></td>
+      <td style="width: 15%;"><img src="https://img.shields.io/badge/Previous_Head-blue" alt="Previous Head Badge"></td>
+      <td style="width: 15%;"><a href="https://www.lesswrong.com/posts/iGuwZTHWb6DFY3sKB/fact-finding-attempting-to-reverse-engineer-factual-recall"><img src="https://img.shields.io/badge/Blog-Post-black" alt="Paper Badge"></a></td>
+    </tr>
+    <tr>
+        <td colspan="3">
+          • Investigated how early MLP layers in Pythia 2.8B encode factual recall using distributed circuits, focusing on superposition and multi-token embeddings.<br>
+          • Explored factual lookup in MLP layers, tested hypotheses on detokenization and hashing mechanisms.<br>
+          • Factual recall functions like a distributed look-up table without easily interpretable internal mechanisms.
+        </td>
+    </tr>
+    <tr>
       <td rowspan="2" style="width: 15%;">2023-10-23</td>
       <td style="width: 55%;"><strong>Linear Representations of Sentiment in Large Language Models</strong></td>
       <td style="width: 15%;"><img src="https://img.shields.io/badge/Direct_effect_Head-blue" alt="Direct Effect Head Badge"></td>
@@ -545,6 +571,19 @@ Papers below are ordered by **publication date**:
           • The paper presents a memory-based perspective on transformers, highlighting associative memories in weight matrices and their gradient-driven learning.<br>
           • Empirical analysis of training dynamics on a simplified transformer model with synthetic data.<br>
           • Discovery of rapid global bigram learning and the slower emergence of an "induction head" for in-context bigrams.
+        </td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="width: 15%;">2023-09-13</td>
+      <td style="width: 55%;"><strong>Sudden Drops in the Loss: Syntax Acquisition, Phase Transitions, and Simplicity Bias in MLMs</strong></td>
+      <td style="width: 15%;"><img src="https://img.shields.io/badge/Syntactic_Head-blue" alt="Syntactic Head Badge"></td>
+      <td style="width: 15%;"><a href="https://arxiv.org/abs/2309.07311"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+    </tr>
+    <tr>
+        <td colspan="3">
+          • Identifies Syntactic Attention Structure (SAS) as a naturally emerging property in masked language models (MLMs) and its role in syntax acquisition.<br>
+          • Analyzes SAS during training and manipulates it to study its causal effect on grammatical capabilities.<br>
+          • SAS is necessary for grammar development, but briefly suppressing it improves model performance.
         </td>
     </tr>
     <tr>
@@ -715,6 +754,19 @@ Papers below are ordered by **publication date**:
         • The paper introduces a novel pruning method for multi-head self-attention that selectively removes less important heads without major performance loss.<br>
         • Analysis of individual attention heads, identification of their specialized roles, and application of a pruning method on the Transformer model.<br>
         • Pruning 38 out of 48 heads in the encoder led to only a 0.15 BLEU score drop.
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="width: 15%;">2018-11-01</td>
+      <td style="width: 55%;"><strong>An Analysis of Encoder Representations in Transformer-Based Machine Translation</strong></td>
+      <td style="width: 15%;"><img src="https://img.shields.io/badge/Positional_Head-blue" alt="Positional Head Badge"></td>
+      <td style="width: 15%;"><a href="https://aclanthology.org/W18-5431/"><img src="https://img.shields.io/badge/EMNLP-Paper-%23D2691E" alt="Paper Badge"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        • This paper analyzes the internal representations of Transformer encoder layers, focusing on syntactic and semantic information learned by self-attention heads.<br>
+        • Probing tasks, dependency relation extraction, and a transfer learning scenario.<br>
+        • Lower layers capture syntax, while higher layers encode more semantic information.
       </td>
     </tr>
     <tr>
