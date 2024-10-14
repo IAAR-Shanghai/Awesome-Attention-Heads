@@ -246,6 +246,21 @@ Papers below are ordered by **publication date**:
       </td>
     </tr>
     <tr>
+        <td rowspan="2" style="width: 15%;">2024-06-04</td>
+        <td style="width: 55%;"><strong>Iteration Head: A Mechanistic Study of Chain-of-Thought</strong></td>
+        <td style="width: 15%;"><img src="https://img.shields.io/badge/Iteration_Head-blue" alt="Iteration Head Badge"></td>
+        <td style="width: 15%;">
+        <a href="https://arxiv.org/abs/2406.02128"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+      </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+          • Introduces "iteration heads," specialized attention heads that enable iterative reasoning in transformers for Chain-of-Thought (CoT) tasks.<br>
+          • Analysis of attention mechanisms, tracking CoT emergence, and testing CoT skills' transferability between tasks. <br>
+          • Iteration heads effectively support CoT reasoning, improving model interpretability and task performance. 
+        </td>
+    </tr>
+    <tr>
         <td rowspan="2" style="width: 15%;">2024-06-03</td>
         <td style="width: 55%;"><strong>LoFiT: Localized Fine-tuning on LLM Representations</strong></td>
         <td style="width: 15%;"><img src="https://img.shields.io/badge/Accuracy_Head-blue" alt="Accuracy Head Badge"></td>
@@ -257,7 +272,7 @@ Papers below are ordered by **publication date**:
     <tr>
         <td colspan="3">
           • Introduces Localized Fine-tuning on LLM Representations (LoFiT), a two-step framework to identify important attention heads of a given task and learn task-specific offset vectors to intervene on the representations of the identified heads.<br>
-          • Identified sparse sets of important attention heads for improving downstream accuracy on truthfulness and reasoning <br>
+          • Identified sparse sets of important attention heads for improving downstream accuracy on truthfulness and reasoning. <br>
           • LoFiT outperformed other representation intervention methods and achieved comparable performance to PEFT methods on TruthfulQA, CLUTRR, and MQuAKE, despite only intervening on 10% of the total attention heads in LLMs. 
         </td>
     </tr>
@@ -446,6 +461,34 @@ Papers below are ordered by **publication date**:
         • Introduces the concept that query and key matrices in in-context heads operate as "two towers" for metric learning, facilitating similarity computation between label features.<br>
         • Analyzed in-context learning mechanisms; identified specific attention heads crucial for ICL.<br>
         • Reduced ICL accuracy from 87.6% to 24.4% by intervening in only 1% of these heads.
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="2">2024-01-23</td>
+      <td><strong>In-Context Language Learning: Architectures and Algorithms</strong></td>
+      <td><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
+      <td><a href="https://arxiv.org/abs/2401.12973"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        • Introduction of "n-gram heads," specialized Transformer attention heads, enhancing in-context language learning (ICLL) through input-conditional token prediction.<br>
+        • Evaluated neural models on regular languages from random finite automata.<br>
+        • Hard-wiring n-gram heads improved perplexity by 6.7% on the SlimPajama dataset.
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="2">2024-01-16</td>
+      <td><strong>The mechanistic basis of data dependence and abrupt learning in an in-context classification task</strong></td>
+      <td><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
+      <td>
+        <a href="https://openreview.net/forum?id=aN4Jf6Cx69"><img src="https://img.shields.io/badge/ICLR-Paper-%23D2691E" alt="Paper Badge"></a> 
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        • The paper models the mechanistic basis of in-context learning (ICL) via the abrupt formation of induction heads in attention-only networks.<br>
+        • Simulated ICL tasks using simplified input data and a two-layer attention-based network.<br>
+        • Induction head formation drives the abrupt transition to ICL, traced through nested non-linearities.
       </td>
     </tr>
     <tr>
