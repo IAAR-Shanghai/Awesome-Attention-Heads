@@ -87,459 +87,497 @@ In this survey, we delve into the potential mechanisms of how attention heads in
 ## 📚 Paper List
 Papers below are ordered by **publication date**:
 
-<details>
-  <summary><strong>Year 2024</strong></summary>
-
-  <table style="width: 100%;">
-    <tr>
-      <td><strong>Date</strong></td>
-      <td><strong>Paper & Summary</strong></td>
-      <td><strong>Tags</strong></td>
-      <td><strong>Links</strong></td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2024-09-09</td>
-      <td style="width: 55%;"><strong>Unveiling Induction Heads: Provable Training Dynamics and Feature Learning in Transformers</strong></td>
-      <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
-      <td style="width: 15%;"><a href="https://arxiv.org/abs/2409.10559"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
-    </tr>
-    <tr>
+<strong>Year 2024</strong>
+<table style="width: 100%;">
+  <tr>
+    <td><strong>Date</strong></td>
+    <td><strong>Paper & Summary</strong></td>
+    <td><strong>Tags</strong></td>
+    <td><strong>Links</strong></td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-10-06</td>
+    <td style="width: 55%;"><strong>Revisiting In-context Learning Inference Circuit in Large Language Models</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Forerunner_Head-blue" alt="Forerunner Head Badge"></td>
+    <td style="width: 15%;"><a href="https://arxiv.org/abs/2410.04468"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Proposed a comprehensive 3-step inference circuit to characterize the inference process of ICL.<br>
+      • Divide ICL into three stages: Summarize, Semantics Merge, and Feature Retrieval and Copy, analyzing the role each stage plays in ICL and its operational mechanism.<br>
+      • Found that before Induction heads, Forerunner Token Heads first merge the demonstration text representations from the forerunner token into their corresponding label tokens, selectively based on the compatibility between the demonstration and label semantics.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-09-09</td>
+    <td style="width: 55%;"><strong>Unveiling Induction Heads: Provable Training Dynamics and Feature Learning in Transformers</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
+    <td style="width: 15%;"><a href="https://arxiv.org/abs/2409.10559"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • The paper introduces a generalized induction head mechanism, explaining how transformer components collaborate to perform in-context learning (ICL) on n-gram Markov chains.<br>
+      • It analyzes a two-attention-layer transformer with gradient flow to predict tokens in Markov chains.<br>
+      • Gradient flow converges, enabling ICL through a learned feature-based induction head mechanism.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-08-16</td>
+    <td style="width: 55%;"><strong>A Mechanistic Interpretation of Syllogistic Reasoning in Auto-Regressive Language Models</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Inhibition_Head-blue" alt="Inhibition Head Badge"></td>
+    <td style="width: 15%;"><a href="https://arxiv.org/abs/2408.08590"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • The study introduces a mechanistic interpretation of syllogistic reasoning in LMs, identifying content-independent reasoning circuits.<br>
+      • Circuit discovery for reasoning and investigating belief bias contamination in attention heads.<br>
+      • Identified a necessary reasoning circuit transferable across syllogistic schemes, but susceptible to contamination by pre-trained world knowledge.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-08-01</td>
+    <td style="width: 55%;"><strong>Enhancing Semantic Consistency of Large Language Models through Model Editing: An Interpretability-Oriented Approach</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Consistency_Head-blue" alt="Consistency Head Badge"></td>
+    <td style="width: 15%;"><a href="https://aclanthology.org/2024.findings-acl.199/"><img src="https://img.shields.io/badge/ACL_Findings-Paper-%23D2691E" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Introduces a cost-effective model editing approach focusing on attention heads to enhance semantic consistency in LLMs without extensive parameter changes.<br>
+      • Analyzed attention heads, injected biases, and tested on NLU and NLG datasets.<br>
+      • Achieved notable improvements in semantic consistency and task performance, with strong generalization across additional tasks.
+    </td>
+  </tr>
+  <tr>
+      <td rowspan="2" style="width: 15%;">2024-07-31</td>
+      <td style="width: 55%;"><strong>Correcting Negative Bias in Large Language Models through Negative Attention Score Alignment</strong></td>
+      <td style="width: 15%;"><img src="https://img.shields.io/badge/Negative_Head-blue" alt="Negative Head Badge"></td>
+      <td style="width: 15%;"><a href="https://arxiv.org/abs/2408.00137"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
       <td colspan="3">
-        • The paper introduces a generalized induction head mechanism, explaining how transformer components collaborate to perform in-context learning (ICL) on n-gram Markov chains.<br>
-        • It analyzes a two-attention-layer transformer with gradient flow to predict tokens in Markov chains.<br>
-        • Gradient flow converges, enabling ICL through a learned feature-based induction head mechanism.
+        • Introduced Negative Attention Score (NAS) to quantify and correct negative bias in language models.<br>
+        • Identified negatively biased attention heads and proposed Negative Attention Score Alignment (NASA) for fine-tuning.<br>
+        • NASA effectively reduced the precision-recall gap while preserving generalization in binary decision tasks.
       </td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2024-08-16</td>
-      <td style="width: 55%;"><strong>A Mechanistic Interpretation of Syllogistic Reasoning in Auto-Regressive Language Models</strong></td>
-      <td style="width: 15%;"><img src="https://img.shields.io/badge/Inhibition_Head-blue" alt="Inhibition Head Badge"></td>
-      <td style="width: 15%;"><a href="https://arxiv.org/abs/2408.08590"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
-    </tr>
-    <tr>
+  </tr>
+  <tr>
+      <td rowspan="2" style="width: 15%;">2024-07-29</td>
+      <td style="width: 55%;"><strong>Detecting and Understanding Vulnerabilities in Language Models via Mechanistic Interpretability</strong></td>
+      <td style="width: 15%;"><img src="https://img.shields.io/badge/Vulnerable_Head-blue" alt="Vulnerable Head Badge"></td>
+      <td style="width: 15%;"><a href="https://arxiv.org/abs/2407.19842"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
       <td colspan="3">
-        • The study introduces a mechanistic interpretation of syllogistic reasoning in LMs, identifying content-independent reasoning circuits.<br>
-        • Circuit discovery for reasoning and investigating belief bias contamination in attention heads.<br>
-        • Identified a necessary reasoning circuit transferable across syllogistic schemes, but susceptible to contamination by pre-trained world knowledge.
+        • Introduces a method using Mechanistic Interpretability (MI) to detect and understand vulnerabilities in LLMs, particularly adversarial attacks.<br>
+        • Analyzes GPT-2 Small for vulnerabilities in predicting 3-letter acronyms.<br>
+        • Successfully identifies and explains specific vulnerabilities in the model related to the task.
       </td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2024-08-01</td>
-      <td style="width: 55%;"><strong>Enhancing Semantic Consistency of Large Language Models through Model Editing: An Interpretability-Oriented Approach</strong></td>
-      <td style="width: 15%;"><img src="https://img.shields.io/badge/Consistency_Head-blue" alt="Consistency Head Badge"></td>
-      <td style="width: 15%;"><a href="https://aclanthology.org/2024.findings-acl.199/"><img src="https://img.shields.io/badge/ACL_Findings-Paper-%23D2691E" alt="Paper Badge"></a></td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        • Introduces a cost-effective model editing approach focusing on attention heads to enhance semantic consistency in LLMs without extensive parameter changes.<br>
-        • Analyzed attention heads, injected biases, and tested on NLU and NLG datasets.<br>
-        • Achieved notable improvements in semantic consistency and task performance, with strong generalization across additional tasks.
-      </td>
-    </tr>
-    <tr>
-        <td rowspan="2" style="width: 15%;">2024-07-31</td>
-        <td style="width: 55%;"><strong>Correcting Negative Bias in Large Language Models through Negative Attention Score Alignment</strong></td>
-        <td style="width: 15%;"><img src="https://img.shields.io/badge/Negative_Head-blue" alt="Negative Head Badge"></td>
-        <td style="width: 15%;"><a href="https://arxiv.org/abs/2408.00137"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
-    </tr>
-    <tr>
-        <td colspan="3">
-          • Introduced Negative Attention Score (NAS) to quantify and correct negative bias in language models.<br>
-          • Identified negatively biased attention heads and proposed Negative Attention Score Alignment (NASA) for fine-tuning.<br>
-          • NASA effectively reduced the precision-recall gap while preserving generalization in binary decision tasks.
-        </td>
-    </tr>
-    <tr>
-        <td rowspan="2" style="width: 15%;">2024-07-29</td>
-        <td style="width: 55%;"><strong>Detecting and Understanding Vulnerabilities in Language Models via Mechanistic Interpretability</strong></td>
-        <td style="width: 15%;"><img src="https://img.shields.io/badge/Vulnerable_Head-blue" alt="Vulnerable Head Badge"></td>
-        <td style="width: 15%;"><a href="https://arxiv.org/abs/2407.19842"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
-    </tr>
-    <tr>
-        <td colspan="3">
-          • Introduces a method using Mechanistic Interpretability (MI) to detect and understand vulnerabilities in LLMs, particularly adversarial attacks.<br>
-          • Analyzes GPT-2 Small for vulnerabilities in predicting 3-letter acronyms.<br>
-          • Successfully identifies and explains specific vulnerabilities in the model related to the task.
-        </td>
-    </tr>
-    <tr>
-        <td rowspan="2" style="width: 15%;">2024-07-22</td>
-        <td style="width: 55%;"><strong>RazorAttention: Efficient KV Cache Compression Through Retrieval Heads</strong></td>
-        <td style="width: 15%;"><img src="https://img.shields.io/badge/Retrieval_Head-blue" alt="Retrieval Head Badge"></td>
-        <td style="width: 15%;"><a href="https://arxiv.org/abs/2407.15891"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
-    </tr>
-    <tr>
-        <td colspan="3">
-          • Introduced RazorAttention, a training-free KV cache compression technique using retrieval heads and compensation tokens to preserve critical token information.<br>
-          • Evaluated RazorAttention on large language models (LLMs) for efficiency.<br>
-          • Achieved over 70% KV cache size reduction with no noticeable performance impact.
-        </td>
-    </tr>
-    <tr>
-        <td rowspan="2" style="width: 15%;">2024-07-21</td>
-        <td style="width: 55%;"><strong>Answer, Assemble, Ace: Understanding How Transformers Answer Multiple Choice Questions</strong></td>
-        <td style="width: 15%;"><img src="https://img.shields.io/badge/Answer_Head-blue" alt="Answer Head Badge"></td>
-        <td style="width: 15%;"><a href="https://arxiv.org/abs/2407.15018"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
-    </tr>
-    <tr>
-        <td colspan="3">
-          • The paper introduces vocabulary projection and activation patching to localize hidden states that predict the correct MCQA answers.<br>
-          • Identified key attention heads and layers responsible for answer selection in transformers.<br>
-          • Middle-layer attention heads are crucial for accurate answer prediction, with a sparse set of heads playing unique roles.
-        </td>
-    </tr>
-    <tr>
-        <td rowspan="2" style="width: 15%;">2024-07-09</td>
-        <td style="width: 55%;"><strong>Induction Heads as an Essential Mechanism for Pattern Matching in In-context Learning</strong></td>
-        <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
-        <td style="width: 15%;"><a href="https://arxiv.org/abs/2407.07011"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
-    </tr>
-    <tr>
-        <td colspan="3">
-          • The article identifies induction heads as crucial for pattern matching in in-context learning (ICL).<br>
-          • Evaluated Llama-3-8B and InternLM2-20B on abstract pattern recognition and NLP tasks.<br>
-          • Ablating induction heads reduces ICL performance by up to ~32%, bringing it close to random for pattern recognition.
-        </td>
-    </tr>
-    <tr>
-        <td rowspan="2" style="width: 15%;">2024-07-01</td>
-        <td style="width: 55%;"><strong>Steering Large Language Models for Cross-lingual Information Retrieval</strong></td>
-        <td style="width: 15%;"><img src="https://img.shields.io/badge/Accuracy_Head-blue" alt="Accuracy Head Badge"><img src="https://img.shields.io/badge/Coherence_Head-blue" alt="Coherence Head Badge"></td>
-        <td style="width: 15%;"><a href="https://dl.acm.org/doi/10.1145/3626772.3657819"><img src="https://img.shields.io/badge/SIGIR-Paper-%23D2691E" alt="Paper Badge"></a></td>
-    </tr>
-    <tr>
-        <td colspan="3">
-          • Introduces Activation Steered Multilingual Retrieval (ASMR), using steering activations to guide LLMs for improved cross-lingual information retrieval.<br>
-          • Identified attention heads in LLMs affecting accuracy and language coherence, and applied steering activations.<br>
-          • ASMR achieved state-of-the-art performance on CLIR benchmarks like XOR-TyDi QA and MKQA.
-        </td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2024-06-21</td>
-      <td style="width: 55%;"><strong>MoA: Mixture of Sparse Attention for Automatic Large Language Model Compression</strong></td>
-      <td style="width: 15%;"><img src="https://img.shields.io/badge/Local--context_Head-blue" alt="Local-context Head Badge"></td>
-      <td style="width: 15%;">
-        <a href="https://arxiv.org/abs/2406.14909"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
-        <a href="https://github.com/thu-nics/MoA"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        • The paper introduces Mixture of Attention (MoA), which tailors distinct sparse attention configurations for different heads and layers, optimizing memory, throughput, and accuracy-latency trade-offs.<br>
-        • MoA profiles models, explores attention configurations, and improves LLM compression.<br>
-        • MoA increases effective context length by 3.9×, while reducing GPU memory usage by 1.2-1.4×.
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2024-06-19</td>
-      <td style="width: 55%;"><strong>On the Difficulty of Faithful Chain-of-Thought Reasoning in Large Language Models</strong></td>
-      <td style="width: 15%;"><img src="https://img.shields.io/badge/Faithfulness_Head-blue" alt="Faithfulness Head Badge"></td>
-      <td style="width: 15%;">
-        <a href="https://openreview.net/forum?id=3h0kZdPhAC"><img src="https://img.shields.io/badge/ICML-Paper-%23D2691E" alt="Paper Badge"></a>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        • Introduced novel strategies for in-context learning, fine-tuning, and activation editing to improve Chain-of-Thought (CoT) reasoning faithfulness in LLMs.<br>
-        • Tested these strategies across multiple benchmarks to evaluate their effectiveness.<br>
-        • Found only limited success in enhancing CoT faithfulness, highlighting the challenge in achieving truly faithful reasoning in LLMs.
-      </td>
-    </tr>
-    <tr>
-        <td rowspan="2" style="width: 15%;">2024-06-04</td>
-        <td style="width: 55%;"><strong>Iteration Head: A Mechanistic Study of Chain-of-Thought</strong></td>
-        <td style="width: 15%;"><img src="https://img.shields.io/badge/Iteration_Head-blue" alt="Iteration Head Badge"></td>
-        <td style="width: 15%;">
-        <a href="https://arxiv.org/abs/2406.02128"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
-      </td>
-    </tr>
-    <tr>
-        <td colspan="3">
-          • Introduces "iteration heads," specialized attention heads that enable iterative reasoning in transformers for Chain-of-Thought (CoT) tasks.<br>
-          • Analysis of attention mechanisms, tracking CoT emergence, and testing CoT skills' transferability between tasks. <br>
-          • Iteration heads effectively support CoT reasoning, improving model interpretability and task performance. 
-        </td>
-    </tr>
-    <tr>
-        <td rowspan="2" style="width: 15%;">2024-06-03</td>
-        <td style="width: 55%;"><strong>LoFiT: Localized Fine-tuning on LLM Representations</strong></td>
-        <td style="width: 15%;"><img src="https://img.shields.io/badge/Accuracy_Head-blue" alt="Accuracy Head Badge"></td>
-        <td style="width: 15%;">
-        <a href="https://arxiv.org/abs/2406.01563"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
-        <a href="https://github.com/fc2869/lo-fit"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
-      </td>
-    </tr>
-    <tr>
-        <td colspan="3">
-          • Introduces Localized Fine-tuning on LLM Representations (LoFiT), a two-step framework to identify important attention heads of a given task and learn task-specific offset vectors to intervene on the representations of the identified heads.<br>
-          • Identified sparse sets of important attention heads for improving downstream accuracy on truthfulness and reasoning. <br>
-          • LoFiT outperformed other representation intervention methods and achieved comparable performance to PEFT methods on TruthfulQA, CLUTRR, and MQuAKE, despite only intervening on 10% of the total attention heads in LLMs. 
-        </td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2024-05-28</td>
-      <td style="width: 55%;"><strong>Knowledge Circuits in Pretrained Transformers</strong></td>
-      <td style="width: 15%;"><img src="https://img.shields.io/badge/Mover_Head-blue" alt="Mover Head Badge"> <img src="https://img.shields.io/badge/Relation_Head-blue" alt="Relation Head Badge"></td>
-      <td style="width: 15%;">
-        <a href="https://arxiv.org/abs/2405.17969"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
-        <a href="https://github.com/zjunlp/KnowledgeCircuits"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        • Introduced "knowledge circuits" in transformers, revealing how specific knowledge is encoded through interaction among attention heads, relation heads, and MLPs.<br>
-        • Analyzed GPT-2 and TinyLLAMA to identify knowledge circuits; evaluated knowledge editing techniques.<br>
-        • Demonstrated how knowledge circuits contribute to model behaviors like hallucinations and in-context learning.
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2024-05-23</td>
-      <td style="width: 55%;"><strong>Linking In-context Learning in Transformers to Human Episodic Memory</strong></td>
-      <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
-      <td style="width: 15%;">
-        <a href="https://arxiv.org/abs/2405.14992"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        • Links in-context learning in Transformer models to human episodic memory, highlighting similarities between induction heads and the contextual maintenance and retrieval (CMR) model.<br>
-        • Analysis of Transformer-based LLMs to demonstrate CMR-like behavior in attention heads.<br>
-        • CMR-like heads emerge in intermediate layers, mirroring human memory biases.
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2024-05-07</td>
-      <td style="width: 55%;"><strong>How does GPT-2 Predict Acronyms? Extracting and Understanding a Circuit via Mechanistic Interpretability</strong></td>
-      <td style="width: 15%;"><img src="https://img.shields.io/badge/Letter_Mover_Head-blue" alt="Letter Mover Head Badge"></td>
-      <td style="width: 15%;">
-        <a href="https://arxiv.org/abs/2405.04156"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        • First mechanistic interpretability study on GPT-2 for predicting multi-token acronyms using attention heads.<br>
-        • Identified and interpreted a circuit of 8 attention heads responsible for acronym prediction.<br>
-        • Demonstrated that these 8 heads (~5% of total) concentrate the acronym prediction functionality.
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2024-05-02</td>
-      <td style="width: 55%;"><strong>What needs to go right for an induction head? A mechanistic study of in-context learning circuits and their formation</strong></td>
-      <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
-      <td style="width: 15%;">
-        <a href="https://openreview.net/forum?id=O8rrXl71D5"><img src="https://img.shields.io/badge/ICML-Paper-%23D2691E" alt="Paper Badge"></a>
-        <a href="https://github.com/aadityasingh/icl-dynamics"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        • Introduced an optogenetics-inspired causal framework to study induction head (IH) formation in transformers.<br>
-        • Analyzed IH emergence in transformers using synthetic data and identified three underlying subcircuits responsible for IH formation.<br>
-        • Discovered that these subcircuits interact to drive IH formation, coinciding with a phase change in model loss.
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2024-04-24</td>
-      <td style="width: 55%;"><strong>Retrieval Head Mechanistically Explains Long-Context Factuality</strong></td>
+  </tr>
+  <tr>
+      <td rowspan="2" style="width: 15%;">2024-07-22</td>
+      <td style="width: 55%;"><strong>RazorAttention: Efficient KV Cache Compression Through Retrieval Heads</strong></td>
       <td style="width: 15%;"><img src="https://img.shields.io/badge/Retrieval_Head-blue" alt="Retrieval Head Badge"></td>
-      <td style="width: 15%;">
-        <a href="https://arxiv.org/abs/2404.15574"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
-        <a href="https://github.com/nightdessert/Retrieval_Head"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
-      </td>
-    </tr>
-    <tr>
+      <td style="width: 15%;"><a href="https://arxiv.org/abs/2407.15891"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
       <td colspan="3">
-        • Identified "retrieval heads" in transformer models responsible for retrieving information across long contexts.<br>
-        • Systematic investigation of retrieval heads across various models, including analysis of their role in chain-of-thought reasoning.<br>
-        • Pruning retrieval heads leads to hallucination, while pruning non-retrieval heads doesn't affect retrieval ability.
+        • Introduced RazorAttention, a training-free KV cache compression technique using retrieval heads and compensation tokens to preserve critical token information.<br>
+        • Evaluated RazorAttention on large language models (LLMs) for efficiency.<br>
+        • Achieved over 70% KV cache size reduction with no noticeable performance impact.
       </td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2024-03-27</td>
-      <td style="width: 55%;"><strong>Non-Linear Inference Time Intervention: Improving LLM Truthfulness</strong></td>
-      <td style="width: 15%;"><img src="https://img.shields.io/badge/Truthfulness_Head-blue" alt="Truthfulness Head Badge"></td>
-      <td style="width: 15%;">
-        <a href="https://arxiv.org/abs/2403.18680"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
-        <a href="https://github.com/Samsung/NL-ITI"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
-      </td>
-    </tr>
-    <tr>
+  </tr>
+  <tr>
+      <td rowspan="2" style="width: 15%;">2024-07-21</td>
+      <td style="width: 55%;"><strong>Answer, Assemble, Ace: Understanding How Transformers Answer Multiple Choice Questions</strong></td>
+      <td style="width: 15%;"><img src="https://img.shields.io/badge/Answer_Head-blue" alt="Answer Head Badge"></td>
+      <td style="width: 15%;"><a href="https://arxiv.org/abs/2407.15018"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
       <td colspan="3">
-        • Introduced Non-Linear Inference Time Intervention (NL-ITI), enhancing LLM truthfulness by multi-token probing and intervention without fine-tuning.<br>
-        • Evaluated NL-ITI on multiple-choice datasets, including TruthfulQA.<br>
-        • Achieved a 16% relative improvement in MC1 accuracy on TruthfulQA over baseline ITI.
+        • The paper introduces vocabulary projection and activation patching to localize hidden states that predict the correct MCQA answers.<br>
+        • Identified key attention heads and layers responsible for answer selection in transformers.<br>
+        • Middle-layer attention heads are crucial for accurate answer prediction, with a sparse set of heads playing unique roles.
       </td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2024-02-28</td>
-      <td style="width: 55%;"><strong>Cutting Off the Head Ends the Conflict: A Mechanism for Interpreting and Mitigating Knowledge Conflicts in Language Models</strong></td>
-      <td style="width: 15%;">
-        <img src="https://img.shields.io/badge/Memory_Head-blue" alt="Memory Head Badge">
-        <img src="https://img.shields.io/badge/Context_Head-blue" alt="Context Head Badge">
-      </td>
-      <td style="width: 15%;">
-        <a href="https://arxiv.org/abs/2402.18154"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        • Introduces the PH3 method to prune conflicting attention heads, mitigating knowledge conflicts in language models without parameter updates.<br>
-        • Applied PH3 to control LMs' reliance on internal memory vs. external context and tested its effectiveness on open-domain QA tasks.<br>
-        • PH3 improved internal memory usage by 44.0% and external context usage by 38.5%.
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2024-02-27</td>
-      <td style="width: 55%;"><strong>Information Flow Routes: Automatically Interpreting Language Models at Scale</strong></td>
-      <td style="width: 15%;">
-        <img src="https://img.shields.io/badge/Positional_Head-blue" alt="Positional Head Badge">
-        <img src="https://img.shields.io/badge/Subword_merging_Head-blue" alt="Subword Merging Head Badge">
-      </td>
-      <td style="width: 15%;">
-        <a href="https://arxiv.org/abs/2403.00824"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
-        <a href="https://github.com/facebookresearch/llm-transparency-tool"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        • Introduces "Information Flow Routes" using attribution for graph-based interpretation of language models, avoiding activation patching.<br>
-        • Experiments with Llama 2, identifying key attention heads and behavior patterns across different domains and tasks.<br>
-        • Uncovered specialized model components; identified consistent roles for attention heads, such as handling tokens of the same part of speech.
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2024-02-20</td>
-      <td style="width: 55%;"><strong>Identifying Semantic Induction Heads to Understand In-Context Learning</strong></td>
+  </tr>
+  <tr>
+      <td rowspan="2" style="width: 15%;">2024-07-09</td>
+      <td style="width: 55%;"><strong>Induction Heads as an Essential Mechanism for Pattern Matching in In-context Learning</strong></td>
       <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
+      <td style="width: 15%;"><a href="https://arxiv.org/abs/2407.07011"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+      <td colspan="3">
+        • The article identifies induction heads as crucial for pattern matching in in-context learning (ICL).<br>
+        • Evaluated Llama-3-8B and InternLM2-20B on abstract pattern recognition and NLP tasks.<br>
+        • Ablating induction heads reduces ICL performance by up to ~32%, bringing it close to random for pattern recognition.
+      </td>
+  </tr>
+  <tr>
+      <td rowspan="2" style="width: 15%;">2024-07-02</td>
+      <td style="width: 55%;"><strong>Interpreting Arithmetic Mechanism in Large Language Models through Comparative Neuron Analysis</strong></td>
+      <td style="width: 15%;"><img src="https://img.shields.io/badge/Arithmetic_Head-blue" alt="Arithmetic Head Badge"></td>
+      <td style="width: 15%;"><a href="https://openreview.net/forum?id=CytotQoqNs"><img src="https://img.shields.io/badge/EMNLP-Paper-%23D2691E" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+      <td colspan="3">
+        • Introduces Comparative Neuron Analysis (CNA) to map arithmetic mechanisms in attention heads of large language models.<br>
+        • Analyzed arithmetic ability, model pruning for arithmetic tasks, and model editing to reduce gender bias.<br>
+        • Identified specific neurons responsible for arithmetic, enabling performance improvements and bias mitigation through targeted neuron manipulation.
+      </td>
+  </tr>
+  <tr>
+      <td rowspan="2" style="width: 15%;">2024-07-01</td>
+      <td style="width: 55%;"><strong>Steering Large Language Models for Cross-lingual Information Retrieval</strong></td>
+      <td style="width: 15%;"><img src="https://img.shields.io/badge/Accuracy_Head-blue" alt="Accuracy Head Badge"><img src="https://img.shields.io/badge/Coherence_Head-blue" alt="Coherence Head Badge"></td>
+      <td style="width: 15%;"><a href="https://dl.acm.org/doi/10.1145/3626772.3657819"><img src="https://img.shields.io/badge/SIGIR-Paper-%23D2691E" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+      <td colspan="3">
+        • Introduces Activation Steered Multilingual Retrieval (ASMR), using steering activations to guide LLMs for improved cross-lingual information retrieval.<br>
+        • Identified attention heads in LLMs affecting accuracy and language coherence, and applied steering activations.<br>
+        • ASMR achieved state-of-the-art performance on CLIR benchmarks like XOR-TyDi QA and MKQA.
+      </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-06-21</td>
+    <td style="width: 55%;"><strong>MoA: Mixture of Sparse Attention for Automatic Large Language Model Compression</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Local--context_Head-blue" alt="Local-context Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2406.14909"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+      <a href="https://github.com/thu-nics/MoA"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • The paper introduces Mixture of Attention (MoA), which tailors distinct sparse attention configurations for different heads and layers, optimizing memory, throughput, and accuracy-latency trade-offs.<br>
+      • MoA profiles models, explores attention configurations, and improves LLM compression.<br>
+      • MoA increases effective context length by 3.9×, while reducing GPU memory usage by 1.2-1.4×.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-06-19</td>
+    <td style="width: 55%;"><strong>On the Difficulty of Faithful Chain-of-Thought Reasoning in Large Language Models</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Faithfulness_Head-blue" alt="Faithfulness Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://openreview.net/forum?id=3h0kZdPhAC"><img src="https://img.shields.io/badge/ICML-Paper-%23D2691E" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Introduced novel strategies for in-context learning, fine-tuning, and activation editing to improve Chain-of-Thought (CoT) reasoning faithfulness in LLMs.<br>
+      • Tested these strategies across multiple benchmarks to evaluate their effectiveness.<br>
+      • Found only limited success in enhancing CoT faithfulness, highlighting the challenge in achieving truly faithful reasoning in LLMs.
+    </td>
+  </tr>
+  <tr>
+      <td rowspan="2" style="width: 15%;">2024-06-04</td>
+      <td style="width: 55%;"><strong>Iteration Head: A Mechanistic Study of Chain-of-Thought</strong></td>
+      <td style="width: 15%;"><img src="https://img.shields.io/badge/Iteration_Head-blue" alt="Iteration Head Badge"></td>
       <td style="width: 15%;">
-        <a href="https://arxiv.org/abs/2402.13055v1"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
-      </td>
-    </tr>
-    <tr>
+      <a href="https://arxiv.org/abs/2406.02128"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
       <td colspan="3">
-        • Identifies and studies "semantic induction heads" in large language models (LLMs) that correlate with in-context learning abilities.<br>
-        • Analyzed attention heads for encoding syntactic dependencies and knowledge graph relations.<br>
-        • Certain attention heads enhance output logits by recalling relevant tokens, crucial for understanding in-context learning in LLMs.
+        • Introduces "iteration heads," specialized attention heads that enable iterative reasoning in transformers for Chain-of-Thought (CoT) tasks.<br>
+        • Analysis of attention mechanisms, tracking CoT emergence, and testing CoT skills' transferability between tasks. <br>
+        • Iteration heads effectively support CoT reasoning, improving model interpretability and task performance. 
       </td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2024-02-16</td>
-      <td style="width: 55%;"><strong>The Evolution of Statistical Induction Heads: In-Context Learning Markov Chains</strong></td>
-      <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
+  </tr>
+  <tr>
+      <td rowspan="2" style="width: 15%;">2024-06-03</td>
+      <td style="width: 55%;"><strong>LoFiT: Localized Fine-tuning on LLM Representations</strong></td>
+      <td style="width: 15%;"><img src="https://img.shields.io/badge/Accuracy_Head-blue" alt="Accuracy Head Badge"></td>
       <td style="width: 15%;">
-        <a href="https://arxiv.org/abs/2402.11004"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
-      </td>
-    </tr>
-    <tr>
+      <a href="https://arxiv.org/abs/2406.01563"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+      <a href="https://github.com/fc2869/lo-fit"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
+    </td>
+  </tr>
+  <tr>
       <td colspan="3">
-        • Introduces a Markov Chain sequence modeling task to analyze how in-context learning (ICL) capabilities emerge in transformers, forming "statistical induction heads."<br>
-        • Empirical and theoretical investigation of multi-phase training in transformers on Markov Chain tasks.<br>
-        • Demonstrates phase transitions from unigram to bigram predictions, influenced by transformer layer interactions.
+        • Introduces Localized Fine-tuning on LLM Representations (LoFiT), a two-step framework to identify important attention heads of a given task and learn task-specific offset vectors to intervene on the representations of the identified heads.<br>
+        • Identified sparse sets of important attention heads for improving downstream accuracy on truthfulness and reasoning. <br>
+        • LoFiT outperformed other representation intervention methods and achieved comparable performance to PEFT methods on TruthfulQA, CLUTRR, and MQuAKE, despite only intervening on 10% of the total attention heads in LLMs. 
       </td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="width: 15%;">2024-02-11</td>
-      <td style="width: 55%;"><strong>Summing Up the Facts: Additive Mechanisms Behind Factual Recall in LLMs</strong></td>
-      <td style="width: 15%;"><img src="https://img.shields.io/badge/Mover_Head-blue" alt="Mover Head Badge"> <img src="https://img.shields.io/badge/Relation_Head-blue" alt="Relation Head Badge"></td>
-      <td style="width: 15%;"><a href="https://www.arxiv.org/abs/2402.07321"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        • Identifies and explains the "additive motif" in factual recall, where LLMs use multiple independent mechanisms that constructively interfere to recall facts.<br>
-        • Extended direct logit attribution to analyze attention heads and unpacked the behavior of mixed heads.<br>
-        • Demonstrated that factual recall in LLMs results from the sum of multiple, independently insufficient contributions.
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="2">2024-02-05</td>
-      <td><strong>How do Large Language Models Learn In-Context? Query and Key Matrices of In-Context Heads are Two Towers for Metric Learning</strong></td>
-      <td><img src="https://img.shields.io/badge/In--Context_Head-blue" alt="In-Context Head Badge"></td>
-      <td><a href="https://arxiv.org/abs/2402.02872"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        • Introduces the concept that query and key matrices in in-context heads operate as "two towers" for metric learning, facilitating similarity computation between label features.<br>
-        • Analyzed in-context learning mechanisms; identified specific attention heads crucial for ICL.<br>
-        • Reduced ICL accuracy from 87.6% to 24.4% by intervening in only 1% of these heads.
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="2">2024-01-23</td>
-      <td><strong>In-Context Language Learning: Architectures and Algorithms</strong></td>
-      <td><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
-      <td><a href="https://arxiv.org/abs/2401.12973"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        • Introduction of "n-gram heads," specialized Transformer attention heads, enhancing in-context language learning (ICLL) through input-conditional token prediction.<br>
-        • Evaluated neural models on regular languages from random finite automata.<br>
-        • Hard-wiring n-gram heads improved perplexity by 6.7% on the SlimPajama dataset.
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="2">2024-01-16</td>
-      <td><strong>The mechanistic basis of data dependence and abrupt learning in an in-context classification task</strong></td>
-      <td><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
-      <td>
-        <a href="https://openreview.net/forum?id=aN4Jf6Cx69"><img src="https://img.shields.io/badge/ICLR-Paper-%23D2691E" alt="Paper Badge"></a> 
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        • The paper models the mechanistic basis of in-context learning (ICL) via the abrupt formation of induction heads in attention-only networks.<br>
-        • Simulated ICL tasks using simplified input data and a two-layer attention-based network.<br>
-        • Induction head formation drives the abrupt transition to ICL, traced through nested non-linearities.
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="2">2024-01-16</td>
-      <td><strong>Circuit Component Reuse Across Tasks in Transformer Language Models</strong></td>
-      <td><img src="https://img.shields.io/badge/Content_Gatherer_Head-blue" alt="Content Gatherer Head Badge"></td>
-      <td>
-        <a href="https://openreview.net/forum?id=fpoAYV6Wsk"><img src="https://img.shields.io/badge/ICLR-Paper-%23D2691E" alt="Paper Badge"></a> 
-        <a href="https://github.com/jmerullo/circuit_reuse"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        • The paper demonstrates that specific circuits in GPT-2 can generalize across different tasks, challenging the notion that such circuits are task-specific.<br>
-        • It examines the reuse of circuits from the Indirect Object Identification (IOI) task in the Colored Objects task.<br>
-        • Adjusting four attention heads boosts accuracy from 49.6% to 93.7% in the Colored Objects task.
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="2">2024-01-16</td>
-      <td><strong>Successor Heads: Recurring, Interpretable Attention Heads In The Wild</strong></td>
-      <td><img src="https://img.shields.io/badge/Successor_Head-blue" alt="Successor Head Badge"></td>
-      <td><a href="https://openreview.net/forum?id=kvcbV8KQsi"><img src="https://img.shields.io/badge/ICLR-Poster-%23D2691E" alt="Poster Badge"></a></td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        • The paper introduces "Successor Heads," attention heads in LLMs that increment tokens with natural orderings, like days or numbers.<br>
-        • It analyzes the formation of successor heads across various model sizes and architectures, such as GPT-2 and Llama-2.<br>
-        • Successor heads are found in models ranging from 31M to 12B parameters, revealing abstract, recurring numeric representations.
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="2">2024-01-16</td>
-      <td><strong>Function Vectors in Large Language Models</strong></td>
-      <td><img src="https://img.shields.io/badge/Function_Vector_Head-blue" alt="Function Vector Head Badge"></td>
-      <td>
-        <a href="https://openreview.net/forum?id=AwyxtyMwaG&noteId=6Qv7kx00La"><img src="https://img.shields.io/badge/ICLR-Paper-%23D2691E" alt="Paper Badge"></a>
-        <a href="https://functions.baulab.info/"><img src="https://img.shields.io/badge/Git-Page-black?logo=internet-explorer" alt="Project Page Badge"></a>
-        <a href="https://github.com/ericwtodd/function_vectors"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
-        <a href="https://github.com/ericwtodd/function_vectors/tree/main/dataset_files"><img src="https://img.shields.io/badge/GitHub-Data-brightgreen?logo=github" alt="Data Badge"></a>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        • The article introduces "Function Vectors (FVs)," compact, causal representations of tasks within autoregressive transformer models.<br>
-        • FVs were tested across diverse in-context learning (ICL) tasks, models, and layers.<br>
-        • FVs can be summed to create vectors that trigger new, complex tasks, demonstrating internal vector composition.
-      </td>
-    </tr>
-  </table>
-</details>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-05-28</td>
+    <td style="width: 55%;"><strong>Knowledge Circuits in Pretrained Transformers</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Mover_Head-blue" alt="Mover Head Badge"> <img src="https://img.shields.io/badge/Relation_Head-blue" alt="Relation Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2405.17969"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+      <a href="https://github.com/zjunlp/KnowledgeCircuits"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Introduced "knowledge circuits" in transformers, revealing how specific knowledge is encoded through interaction among attention heads, relation heads, and MLPs.<br>
+      • Analyzed GPT-2 and TinyLLAMA to identify knowledge circuits; evaluated knowledge editing techniques.<br>
+      • Demonstrated how knowledge circuits contribute to model behaviors like hallucinations and in-context learning.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-05-23</td>
+    <td style="width: 55%;"><strong>Linking In-context Learning in Transformers to Human Episodic Memory</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2405.14992"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Links in-context learning in Transformer models to human episodic memory, highlighting similarities between induction heads and the contextual maintenance and retrieval (CMR) model.<br>
+      • Analysis of Transformer-based LLMs to demonstrate CMR-like behavior in attention heads.<br>
+      • CMR-like heads emerge in intermediate layers, mirroring human memory biases.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-05-07</td>
+    <td style="width: 55%;"><strong>How does GPT-2 Predict Acronyms? Extracting and Understanding a Circuit via Mechanistic Interpretability</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Letter_Mover_Head-blue" alt="Letter Mover Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2405.04156"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • First mechanistic interpretability study on GPT-2 for predicting multi-token acronyms using attention heads.<br>
+      • Identified and interpreted a circuit of 8 attention heads responsible for acronym prediction.<br>
+      • Demonstrated that these 8 heads (~5% of total) concentrate the acronym prediction functionality.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-05-02</td>
+    <td style="width: 55%;"><strong>Interpreting and Improving Large Language Models in Arithmetic Calculation</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Arithmetic_Head-blue" alt="Arithmetic Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://proceedings.mlr.press/v235/zhang24bk.html"><img src="https://img.shields.io/badge/ICML-Paper-%23D2691E" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Introduces a detailed investigation of LLMs' inner mechanisms through mathematical tasks, following the 'identify-analyze-finetune' pipeline.<br>
+      • Analyzed the model's ability to perform arithmetic tasks involving two operands, such as addition, subtraction, multiplication, and division.<br>
+      • Found that LLMs frequently involve a small fraction (< 5%) of attention heads, which play a pivotal role in focusing on operands and operators during calculation processes.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-05-02</td>
+    <td style="width: 55%;"><strong>What needs to go right for an induction head? A mechanistic study of in-context learning circuits and their formation</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://openreview.net/forum?id=O8rrXl71D5"><img src="https://img.shields.io/badge/ICML-Paper-%23D2691E" alt="Paper Badge"></a>
+      <a href="https://github.com/aadityasingh/icl-dynamics"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Introduced an optogenetics-inspired causal framework to study induction head (IH) formation in transformers.<br>
+      • Analyzed IH emergence in transformers using synthetic data and identified three underlying subcircuits responsible for IH formation.<br>
+      • Discovered that these subcircuits interact to drive IH formation, coinciding with a phase change in model loss.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-04-24</td>
+    <td style="width: 55%;"><strong>Retrieval Head Mechanistically Explains Long-Context Factuality</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Retrieval_Head-blue" alt="Retrieval Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2404.15574"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+      <a href="https://github.com/nightdessert/Retrieval_Head"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Identified "retrieval heads" in transformer models responsible for retrieving information across long contexts.<br>
+      • Systematic investigation of retrieval heads across various models, including analysis of their role in chain-of-thought reasoning.<br>
+      • Pruning retrieval heads leads to hallucination, while pruning non-retrieval heads doesn't affect retrieval ability.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-03-27</td>
+    <td style="width: 55%;"><strong>Non-Linear Inference Time Intervention: Improving LLM Truthfulness</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Truthfulness_Head-blue" alt="Truthfulness Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2403.18680"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+      <a href="https://github.com/Samsung/NL-ITI"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Introduced Non-Linear Inference Time Intervention (NL-ITI), enhancing LLM truthfulness by multi-token probing and intervention without fine-tuning.<br>
+      • Evaluated NL-ITI on multiple-choice datasets, including TruthfulQA.<br>
+      • Achieved a 16% relative improvement in MC1 accuracy on TruthfulQA over baseline ITI.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-02-28</td>
+    <td style="width: 55%;"><strong>Cutting Off the Head Ends the Conflict: A Mechanism for Interpreting and Mitigating Knowledge Conflicts in Language Models</strong></td>
+    <td style="width: 15%;">
+      <img src="https://img.shields.io/badge/Memory_Head-blue" alt="Memory Head Badge">
+      <img src="https://img.shields.io/badge/Context_Head-blue" alt="Context Head Badge">
+    </td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2402.18154"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Introduces the PH3 method to prune conflicting attention heads, mitigating knowledge conflicts in language models without parameter updates.<br>
+      • Applied PH3 to control LMs' reliance on internal memory vs. external context and tested its effectiveness on open-domain QA tasks.<br>
+      • PH3 improved internal memory usage by 44.0% and external context usage by 38.5%.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-02-27</td>
+    <td style="width: 55%;"><strong>Information Flow Routes: Automatically Interpreting Language Models at Scale</strong></td>
+    <td style="width: 15%;">
+      <img src="https://img.shields.io/badge/Positional_Head-blue" alt="Positional Head Badge">
+      <img src="https://img.shields.io/badge/Subword_merging_Head-blue" alt="Subword Merging Head Badge">
+    </td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2403.00824"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+      <a href="https://github.com/facebookresearch/llm-transparency-tool"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Introduces "Information Flow Routes" using attribution for graph-based interpretation of language models, avoiding activation patching.<br>
+      • Experiments with Llama 2, identifying key attention heads and behavior patterns across different domains and tasks.<br>
+      • Uncovered specialized model components; identified consistent roles for attention heads, such as handling tokens of the same part of speech.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-02-20</td>
+    <td style="width: 55%;"><strong>Identifying Semantic Induction Heads to Understand In-Context Learning</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2402.13055v1"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Identifies and studies "semantic induction heads" in large language models (LLMs) that correlate with in-context learning abilities.<br>
+      • Analyzed attention heads for encoding syntactic dependencies and knowledge graph relations.<br>
+      • Certain attention heads enhance output logits by recalling relevant tokens, crucial for understanding in-context learning in LLMs.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-02-16</td>
+    <td style="width: 55%;"><strong>The Evolution of Statistical Induction Heads: In-Context Learning Markov Chains</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2402.11004"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Introduces a Markov Chain sequence modeling task to analyze how in-context learning (ICL) capabilities emerge in transformers, forming "statistical induction heads."<br>
+      • Empirical and theoretical investigation of multi-phase training in transformers on Markov Chain tasks.<br>
+      • Demonstrates phase transitions from unigram to bigram predictions, influenced by transformer layer interactions.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-02-11</td>
+    <td style="width: 55%;"><strong>Summing Up the Facts: Additive Mechanisms Behind Factual Recall in LLMs</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Mover_Head-blue" alt="Mover Head Badge"> <img src="https://img.shields.io/badge/Relation_Head-blue" alt="Relation Head Badge"></td>
+    <td style="width: 15%;"><a href="https://www.arxiv.org/abs/2402.07321"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Identifies and explains the "additive motif" in factual recall, where LLMs use multiple independent mechanisms that constructively interfere to recall facts.<br>
+      • Extended direct logit attribution to analyze attention heads and unpacked the behavior of mixed heads.<br>
+      • Demonstrated that factual recall in LLMs results from the sum of multiple, independently insufficient contributions.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2">2024-02-05</td>
+    <td><strong>How do Large Language Models Learn In-Context? Query and Key Matrices of In-Context Heads are Two Towers for Metric Learning</strong></td>
+    <td><img src="https://img.shields.io/badge/In--Context_Head-blue" alt="In-Context Head Badge"></td>
+    <td><a href="https://arxiv.org/abs/2402.02872"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Introduces the concept that query and key matrices in in-context heads operate as "two towers" for metric learning, facilitating similarity computation between label features.<br>
+      • Analyzed in-context learning mechanisms; identified specific attention heads crucial for ICL.<br>
+      • Reduced ICL accuracy from 87.6% to 24.4% by intervening in only 1% of these heads.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2">2024-01-23</td>
+    <td><strong>In-Context Language Learning: Architectures and Algorithms</strong></td>
+    <td><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
+    <td><a href="https://arxiv.org/abs/2401.12973"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Introduction of "n-gram heads," specialized Transformer attention heads, enhancing in-context language learning (ICLL) through input-conditional token prediction.<br>
+      • Evaluated neural models on regular languages from random finite automata.<br>
+      • Hard-wiring n-gram heads improved perplexity by 6.7% on the SlimPajama dataset.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2">2024-01-16</td>
+    <td><strong>The mechanistic basis of data dependence and abrupt learning in an in-context classification task</strong></td>
+    <td><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
+    <td>
+      <a href="https://openreview.net/forum?id=aN4Jf6Cx69"><img src="https://img.shields.io/badge/ICLR-Paper-%23D2691E" alt="Paper Badge"></a> 
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • The paper models the mechanistic basis of in-context learning (ICL) via the abrupt formation of induction heads in attention-only networks.<br>
+      • Simulated ICL tasks using simplified input data and a two-layer attention-based network.<br>
+      • Induction head formation drives the abrupt transition to ICL, traced through nested non-linearities.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2">2024-01-16</td>
+    <td><strong>Circuit Component Reuse Across Tasks in Transformer Language Models</strong></td>
+    <td><img src="https://img.shields.io/badge/Content_Gatherer_Head-blue" alt="Content Gatherer Head Badge"></td>
+    <td>
+      <a href="https://openreview.net/forum?id=fpoAYV6Wsk"><img src="https://img.shields.io/badge/ICLR-Paper-%23D2691E" alt="Paper Badge"></a> 
+      <a href="https://github.com/jmerullo/circuit_reuse"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • The paper demonstrates that specific circuits in GPT-2 can generalize across different tasks, challenging the notion that such circuits are task-specific.<br>
+      • It examines the reuse of circuits from the Indirect Object Identification (IOI) task in the Colored Objects task.<br>
+      • Adjusting four attention heads boosts accuracy from 49.6% to 93.7% in the Colored Objects task.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2">2024-01-16</td>
+    <td><strong>Successor Heads: Recurring, Interpretable Attention Heads In The Wild</strong></td>
+    <td><img src="https://img.shields.io/badge/Successor_Head-blue" alt="Successor Head Badge"></td>
+    <td><a href="https://openreview.net/forum?id=kvcbV8KQsi"><img src="https://img.shields.io/badge/ICLR-Poster-%23D2691E" alt="Poster Badge"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • The paper introduces "Successor Heads," attention heads in LLMs that increment tokens with natural orderings, like days or numbers.<br>
+      • It analyzes the formation of successor heads across various model sizes and architectures, such as GPT-2 and Llama-2.<br>
+      • Successor heads are found in models ranging from 31M to 12B parameters, revealing abstract, recurring numeric representations.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2">2024-01-16</td>
+    <td><strong>Function Vectors in Large Language Models</strong></td>
+    <td><img src="https://img.shields.io/badge/Function_Vector_Head-blue" alt="Function Vector Head Badge"></td>
+    <td>
+      <a href="https://openreview.net/forum?id=AwyxtyMwaG&noteId=6Qv7kx00La"><img src="https://img.shields.io/badge/ICLR-Paper-%23D2691E" alt="Paper Badge"></a>
+      <a href="https://functions.baulab.info/"><img src="https://img.shields.io/badge/Git-Page-black?logo=internet-explorer" alt="Project Page Badge"></a>
+      <a href="https://github.com/ericwtodd/function_vectors"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
+      <a href="https://github.com/ericwtodd/function_vectors/tree/main/dataset_files"><img src="https://img.shields.io/badge/GitHub-Data-brightgreen?logo=github" alt="Data Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • The article introduces "Function Vectors (FVs)," compact, causal representations of tasks within autoregressive transformer models.<br>
+      • FVs were tested across diverse in-context learning (ICL) tasks, models, and layers.<br>
+      • FVs can be summed to create vectors that trigger new, complex tasks, demonstrating internal vector composition.
+    </td>
+  </tr>
+</table>
 
 <details>
   <summary><strong>Year 2023</strong></summary>
