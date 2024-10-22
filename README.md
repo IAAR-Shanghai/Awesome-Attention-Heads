@@ -96,6 +96,47 @@ Papers below are ordered by **publication date**:
     <td><strong>Links</strong></td>
   </tr>
   <tr>
+    <td rowspan="2" style="width: 15%;">2024-10-14</td>
+    <td style="width: 55%;"><strong>DuoAttention: Efficient Long-Context LLM Inference with Retrieval and Streaming Heads</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Retrieval_Head-blue" alt="Retrieval Head Badge"><img src="https://img.shields.io/badge/Streaming_Head-blue" alt="Streaming Head Badge"></td>
+    <td style="width: 15%;"><a href="https://arxiv.org/abs/2410.10819"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Introduced DuoAttention, a framework that reduces both LLM’s decoding and pre-filling memory and latency without compromising its long-context abilities, based on the discovery of Retrieval Heads and Streaming Heads within LLM.<br>
+      • Test the framework's impact on LLM’s performance in both short-context and long-context tasks, as well as its inference efficiency.<br>
+      • By applying a full KV cache only to retrieval heads, DuoAttention significantly reduces memory usage and latency for both decoding and pre-filling in long-context applications.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-10-14</td>
+    <td style="width: 55%;"><strong>Locking Down the Finetuned LLMs Safety</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Safety_Head-blue" alt="Safety Head Badge"></td>
+    <td style="width: 15%;"><a href="https://arxiv.org/abs/2410.10343"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Introduced SafetyLock, a novel and efficient method for maintaining the safety of fine-tuned large
+language models across various risk levels and attack scenarios, based on the discovery of Safety Heads within LLM.<br>
+      • Evaluate the effectiveness of the SafetyLock in enhancing model safety and inference efficiency.<br>
+      • By applying intervention vectors to safety heads, SafetyLock can modify the model’s internal activations towards harmlessness during inference, achieving precise safety alignment with minimal impact on response.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-10-11</td>
+    <td style="width: 55%;"><strong>The Same But Different: Structural Similarities and Differences in Multilingual Language Modeling</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Copy_Head-blue" alt="Copy Head Badge"><img src="https://img.shields.io/badge/Past_Tense_Head-blue" alt="Past Tense Head Badge"></td>
+    <td style="width: 15%;"><a href="https://arxiv.org/abs/2410.09223"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Conducted an in-depth study of the specific components that multilingual models rely on when performing tasks that require language-specific morphological processes.<br>
+      • Investigate the functional differences of internal model components when performing tasks in English and Chinese.<br>
+      • Copy head has a similarly high activation frequency in both languages whereas the past tense head is only frequently activated in English.
+    </td>
+  </tr>
+  <tr>
+  <tr>
     <td rowspan="2" style="width: 15%;">2024-10-06</td>
     <td style="width: 55%;"><strong>Revisiting In-context Learning Inference Circuit in Large Language Models</strong></td>
     <td style="width: 15%;"><img src="https://img.shields.io/badge/Forerunner_Head-blue" alt="Forerunner Head Badge"></td>
@@ -407,6 +448,19 @@ Papers below are ordered by **publication date**:
       • Introduced Non-Linear Inference Time Intervention (NL-ITI), enhancing LLM truthfulness by multi-token probing and intervention without fine-tuning.<br>
       • Evaluated NL-ITI on multiple-choice datasets, including TruthfulQA.<br>
       • Achieved a 16% relative improvement in MC1 accuracy on TruthfulQA over baseline ITI.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-02-28</td>
+    <td style="width: 55%;"><strong>How to think step-by-step: A mechanistic understanding of chain-of-thought reasoning</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/CoT_Head-blue" alt="CoT Head Badge"></td>
+    <td style="width: 15%;"><a href="https://arxiv.org/abs/2402.18312v2"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Provided an in-depth analysis of CoT-mediated reasoning in LLMs in terms of the neural functional components.<br>
+      • Dissected CoT-based reasoning on fictional reasoning as a composition of a fixed number of subtasks that require decision-making, copying, and inductive reasoning, analyzing their mechanism separately.<br>
+      • Found that attention heads perform information movement between ontologically related (or negatively related) tokens, resulting in distinctly identifiable representations for these token pairs.
     </td>
   </tr>
   <tr>
