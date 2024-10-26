@@ -96,6 +96,54 @@ Papers below are ordered by **publication date**:
     <td><strong>Links</strong></td>
   </tr>
   <tr>
+    <td rowspan="2" style="width: 15%;">2024-10-21</td>
+    <td style="width: 55%;"><strong>A Psycholinguistic Evaluation of Language Models' Sensitivity to Argument Roles</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Subject_Head-blue" alt="Subject Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2410.16139"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+      <a href="https://github.com/umd-psycholing/RoleReversalLM"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Observed subject head in a more generalized setting.<br>
+      • Analysed attention patterns under the condition of swap-arguments and replace-argument.<br>
+      • Despite being able to distinguish roles, models may struggle to use argument role information correctly, as the issue lies in how this information is encoded into verb representations, resulting in weaker role sensitivity.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-10-17</td>
+    <td style="width: 55%;"><strong>Active-Dormant Attention Heads: Mechanistically Demystifying Extreme-Token Phenomena in LLMs</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Active_Dormant_Head-blue" alt="Active-Dormant Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2410.13835"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Demonstrated that extreme-token phenomena arise from an active-dormant mechanism in attention heads, coupled with a mutual-reinforcement mechanism during pretraining.<br>
+      • Using simple transformers trained on the Bigram-Backcopy (BB) task to analyze extreme token phenomena and extend it to pre-trained LLMs.<br>
+      • Many of the static and dynamic properties of extreme-token phenomena predicted by the BB task align
+with observations in pretrained LLMs.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-10-17</td>
+    <td style="width: 55%;"><strong>On the Role of Attention Heads in Large Language Model Safety</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Safety_Head-blue" alt="Safety Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2410.13708"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+      <a href="https://github.com/ydyjya/SafetyHeadAttribution"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Proposed a novel metric which tailored for multi-head attention, the Safety Head ImPortant Score (Ships), to assess the individual heads’ contributions to model safety.<br>
+      • Conducted analyses on the functionality of these safety attention heads, exploring their characteristics and mechanisms.<br>
+      • Certain attention heads are crucial for safety, safety heads overlap across fine-tuned models, and ablating these heads minimally impacts helpfulness.
+    </td>
+  </tr>
+  <tr>
     <td rowspan="2" style="width: 15%;">2024-10-14</td>
     <td style="width: 55%;"><strong>DuoAttention: Efficient Long-Context LLM Inference with Retrieval and Streaming Heads</strong></td>
     <td style="width: 15%;"><img src="https://img.shields.io/badge/Retrieval_Head-blue" alt="Retrieval Head Badge"><img src="https://img.shields.io/badge/Streaming_Head-blue" alt="Streaming Head Badge"></td>
@@ -136,6 +184,19 @@ language models across various risk levels and attack scenarios, based on the di
     </td>
   </tr>
   <tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-10-08</td>
+    <td style="width: 55%;"><strong>Round and Round We Go! What makes Rotary Positional Encodings useful?</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Diagonal_Head-blue" alt="Diagonal Head Badge"><img src="https://img.shields.io/badge/Previous_Token_Head-blue" alt="Previous Token Head Badge"><img src="https://img.shields.io/badge/Apostrophe_Head-blue" alt="Apostrophe Head Badge"></td>
+    <td style="width: 15%;"><a href="https://arxiv.org/abs/2410.06205"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Provided an in-depth analysis of the internals of a trained Gemma 7B model to understand how RoPE is being used at a mechanical level.<br>
+      • Understood the usage of different frequencies in the queries and keys.<br>
+      • Found that the highest frequencies in RoPE are cleverly used by Gemma 7B to construct special ‘positional’ attention heads(Diagonal heads, Previous-token head), while the low frequencies are used by Apostrophe head.
+    </td>
+  </tr>
   <tr>
     <td rowspan="2" style="width: 15%;">2024-10-06</td>
     <td style="width: 55%;"><strong>Revisiting In-context Learning Inference Circuit in Large Language Models</strong></td>
