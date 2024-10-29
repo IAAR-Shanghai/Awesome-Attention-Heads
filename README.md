@@ -45,13 +45,13 @@
 
 > \[!IMPORTANT\]
 >
-> - 🌟 **Star Us!** If you find our work helpful, please consider staring our GitHub to stay updated with the latest content in this Awesome repo!
-> 
-> - About this repo. This is a platform to get the **latest research** on different kinds of LLM's Attention Heads. Also, we released a survey based on these fantastic works.
+> - About this repo. This is a platform to get the **latest research** on different kinds of LLM's Attention Heads. Also, we released a **survey** based on these fantastic works.
 >
 > - If you want to **cite our work**, here is our bibtex entry: [CITATION.bib](./CITATION.bib).
 >
-> - If you only want to see the related **paper list**, please jump directly to [here](#lastest-papers).
+> - If you only want to see the related **paper list**, please jump directly to [here](#-paper-lists).
+>
+> - If you want to contribute to this repo, refer to [here](#hand-make-a-contribution)
 
 ## 📢 News
 - **[2024/09/07]** Our paper secured the 2nd place on [Hugging Face's Daily Paper List](https://huggingface.co/papers?date=2024-09-06).
@@ -981,6 +981,18 @@ language models across various risk levels and attack scenarios, based on the di
   </table>
 
 </details>
+
+## :hand: Make a Contribution
+Issue Template: 
+```
+Title: [paper's title]
+Head: [head name1] (, [head name2] ...)
+Published: [arXiv / ACL / ICLR / NIPS / ...]
+Summary:
+  - Innovation:
+  - Tasks:
+  - Significant Result: 
+```
 
 ## :star: Star Trends
 
