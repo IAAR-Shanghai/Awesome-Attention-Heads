@@ -49,7 +49,7 @@
 >
 > - If you want to **cite our work**, here is our bibtex entry: [CITATION.bib](./CITATION.bib).
 >
-> - If you only want to see the related **paper list**, please jump directly to [here](#-paper-lists).
+> - If you only want to see the related **paper list**, please jump directly to [here](#-paper-list).
 >
 > - If you want to contribute to this repo, refer to [here](#hand-make-a-contribution)
 
