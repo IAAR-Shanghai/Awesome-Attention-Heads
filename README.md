@@ -211,6 +211,19 @@ language models across various risk levels and attack scenarios, based on the di
     </td>
   </tr>
   <tr>
+    <td rowspan="2" style="width: 15%;">2024-10-01</td>
+    <td style="width: 55%;"><strong>Sparse Attention Decomposition Applied to Circuit Tracing</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Name_Mover_Head-blue" alt="Name Mover Head Badge"><img src="https://img.shields.io/badge/Duplicate_Token_Head-blue" alt="Duplicate Token Head Badge"></td>
+    <td style="width: 15%;"><a href="https://arxiv.org/abs/2410.00340"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Introduces Sparse Attention Decomposition, using SVD on attention head matrices to trace communication paths in GPT-2 models.<br>
+      • Applied to circuit tracing in GPT-2 small for the Indirect Object Identification (IOI) task.<br>
+      • Identified sparse, functionally significant communication signals between attention heads, improving interpretability.
+    </td>
+  </tr>
+  <tr>
     <td rowspan="2" style="width: 15%;">2024-09-09</td>
     <td style="width: 55%;"><strong>Unveiling Induction Heads: Provable Training Dynamics and Feature Learning in Transformers</strong></td>
     <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
