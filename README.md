@@ -434,9 +434,10 @@ language models across various risk levels and attack scenarios, based on the di
   <tr>
     <td rowspan="2" style="width: 15%;">2024-05-23</td>
     <td style="width: 55%;"><strong>Linking In-context Learning in Transformers to Human Episodic Memory</strong></td>
-    <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/CMR_like_Head-blue" alt="CMR-like Head Badge"></td>
     <td style="width: 15%;">
-      <a href="https://arxiv.org/abs/2405.14992"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+      <a href="https://arxiv.org/abs/2405.14992"><img src="https://img.shields.io/badge/NIPS-Paper-%23D2691E" alt="Paper Badge"></a>
+      <a href="https://github.com/corxyz/icl-cmr"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
     </td>
   </tr>
   <tr>
