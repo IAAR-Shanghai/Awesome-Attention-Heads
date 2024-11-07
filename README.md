@@ -96,6 +96,37 @@ Papers below are ordered by **publication date**:
     <td><strong>Links</strong></td>
   </tr>
   <tr>
+    <td rowspan="2" style="width: 15%;">2024-11-06</td>
+    <td style="width: 55%;"><strong>How Transformers Solve Propositional Logic Problems: A Mechanistic Analysis</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Queried_rule_Locating_Head-blue" alt="Queried-rule Locating Head Badge"><img src="https://img.shields.io/badge/Queried_rule_Mover_Head-blue" alt="Queried-rule Mover Head Badge"><img src="https://img.shields.io/badge/Fact_processing_Head-blue" alt="Fact-processing Head Badge"><img src="https://img.shields.io/badge/Decision_Head-blue" alt="Decision Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2411.04105"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Identifies specific attention circuits in transformers that solve propositional logic problems, focusing on "planning" and "reasoning" mechanisms.<br>
+      • Analyzed small transformers and Mistral-7B, using activation patching to uncover reasoning pathways.<br>
+      • Found distinct attention heads specializing in rule location, fact processing, and decision-making in logical reasoning.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-10-28</td>
+    <td style="width: 55%;"><strong>Arithmetic Without Algorithms: Language Models Solve Math With a Bag of Heuristics</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Arithmetic_Head-blue" alt="Arithmetic Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2410.21272"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+      <a href="https://github.com/technion-cs-nlp/llm-arithmetic-heuristics"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Identified a subset of the model (a circuit) that explains most of the model’s behavior for basic arithmetic logic and examine its functionality.<br>
+      • Analyzed attention patterns using two-operand arithmetic prompts with Arabic numerals and the four basic operators (+, −, ×, ÷).<br>
+      • For addition, subtraction, and division, 6 attention heads yield high faithfulness (97% on average), whereas multiplication requires 20 heads to exceed 90% faithfulness.
+    </td>
+  </tr>
+  <tr>
     <td rowspan="2" style="width: 15%;">2024-10-21</td>
     <td style="width: 55%;"><strong>A Psycholinguistic Evaluation of Language Models' Sensitivity to Argument Roles</strong></td>
     <td style="width: 15%;"><img src="https://img.shields.io/badge/Subject_Head-blue" alt="Subject Head Badge"></td>
@@ -351,6 +382,19 @@ language models across various risk levels and attack scenarios, based on the di
         • Introduces Activation Steered Multilingual Retrieval (ASMR), using steering activations to guide LLMs for improved cross-lingual information retrieval.<br>
         • Identified attention heads in LLMs affecting accuracy and language coherence, and applied steering activations.<br>
         • ASMR achieved state-of-the-art performance on CLIR benchmarks like XOR-TyDi QA and MKQA.
+      </td>
+  </tr>
+  <tr>
+      <td rowspan="2" style="width: 15%;">2024-06-25</td>
+      <td style="width: 55%;"><strong>How Transformers Learn Causal Structure with Gradient Descent</strong></td>
+      <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
+      <td style="width: 15%;"><a href="https://openreview.net/forum?id=jNM4imlHZv"><img src="https://img.shields.io/badge/ICML-Paper-%23D2691E" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+      <td colspan="3">
+        • Provided an explanation of how transformers learn causal structures through gradient-based training algorithms.<br>
+        • Analyzed the performance of two-layer transformers on a task called random sequences with causal structure.<br>
+        • Gradient descent on a simplified two-layer transformer learns to solve this task by encoding the latent causal graph in the first attention layer. As a special case, when sequences are generated from in-context Markov chains, transformers learn to develop an induction head.
       </td>
   </tr>
   <tr>
