@@ -51,7 +51,7 @@
 >
 > - If you only want to see the related **paper list**, please jump directly to [here](#-paper-list).
 >
-> - If you want to contribute to this repo, refer to [here](#hand-make-a-contribution)
+> - If you want to contribute to this repo, refer to [here](#hand-make-a-contribution).
 
 ## 📢 News
 - **[2024/09/07]** Our paper secured the 2nd place on [Hugging Face's Daily Paper List](https://huggingface.co/papers?date=2024-09-06).
