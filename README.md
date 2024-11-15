@@ -96,6 +96,22 @@ Papers below are ordered by **publication date**:
     <td><strong>Links</strong></td>
   </tr>
   <tr>
+    <td rowspan="2" style="width: 15%;">2024-11-15</td>
+    <td style="width: 55%;"><strong>SEEKR: Selective Attention-Guided Knowledge Retention for Continual Learning of Large Language Models</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Knowledge_Retention_Head-blue" alt="Knowledge-Retention Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://aclanthology.org/2024.emnlp-main.190/"><img src="https://img.shields.io/badge/EMNLP-Paper-%23D2691E" alt="Paper Badge"></a>
+      <a href="https://github.com/jinghan1he/SEEKR"><img src="https://img.shields.io/badge/GitHub-Code-brightgreen?logo=github" alt="Code Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Proposes SEEKR, a selective attention-guided knowledge retention method for continual learning in LLMs, focusing on key attention heads for efficient distillation.<br>
+      • Evaluated on continual learning benchmarks TRACE and SuperNI.<br>
+      • SEEKR achieved comparable or better performance with only 1% of replay data compared to other methods.
+    </td>
+  </tr>
+  <tr>
     <td rowspan="2" style="width: 15%;">2024-11-06</td>
     <td style="width: 55%;"><strong>How Transformers Solve Propositional Logic Problems: A Mechanistic Analysis</strong></td>
     <td style="width: 15%;"><img src="https://img.shields.io/badge/Queried_rule_Locating_Head-blue" alt="Queried-rule Locating Head Badge"><img src="https://img.shields.io/badge/Queried_rule_Mover_Head-blue" alt="Queried-rule Mover Head Badge"><img src="https://img.shields.io/badge/Fact_processing_Head-blue" alt="Fact-processing Head Badge"><img src="https://img.shields.io/badge/Decision_Head-blue" alt="Decision Head Badge"></td>
@@ -108,6 +124,21 @@ Papers below are ordered by **publication date**:
       • Identifies specific attention circuits in transformers that solve propositional logic problems, focusing on "planning" and "reasoning" mechanisms.<br>
       • Analyzed small transformers and Mistral-7B, using activation patching to uncover reasoning pathways.<br>
       • Found distinct attention heads specializing in rule location, fact processing, and decision-making in logical reasoning.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-11-01</td>
+    <td style="width: 55%;"><strong>Attention Tracker: Detecting Prompt Injection Attacks in LLMs</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Important_Head-blue" alt="Important Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2411.00348"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Proposed Attention Tracker, a simple yet effective training-free guard that detects prompt injection attacks based on identified Important Heads.<br>
+      • Identified the important heads using merely a small set of LLM-generated random sentences combined with a naive ignore attack.<br>
+      • Attention Tracker is effective on both small and large LMs, addressing a significant limitation of previous training-free detection methods.
     </td>
   </tr>
   <tr>
@@ -773,6 +804,19 @@ language models across various risk levels and attack scenarios, based on the di
           • Investigated how early MLP layers in Pythia 2.8B encode factual recall using distributed circuits, focusing on superposition and multi-token embeddings.<br>
           • Explored factual lookup in MLP layers, tested hypotheses on detokenization and hashing mechanisms.<br>
           • Factual recall functions like a distributed look-up table without easily interpretable internal mechanisms.
+        </td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="width: 15%;">2023-11-07</td>
+      <td style="width: 55%;"><strong>Towards Interpretable Sequence Continuation: Analyzing Shared Circuits in Large Language Models</strong></td>
+      <td style="width: 15%;"><img src="https://img.shields.io/badge/Detection_Head-blue" alt="Detection Head Badge"></td>
+      <td style="width: 15%;"><a href="https://arxiv.org/abs/2311.04131"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+    </tr>
+    <tr>
+        <td colspan="3">
+          • Demonstrated the existence of shared circuits for similar sequence continuation tasks.<br>
+          • Analyzed and compared circuits for similar sequence continuation tasks, which include increasing sequences of Arabic numerals, number words, and months.<br>
+          • Semantically related sequences rely on shared circuit subgraphs with analogous roles and the finding of similar sub-circuits across models with analogous functionality.
         </td>
     </tr>
     <tr>
