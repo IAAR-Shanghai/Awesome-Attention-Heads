@@ -96,6 +96,81 @@ Papers below are ordered by **publication date**:
     <td><strong>Links</strong></td>
   </tr>
   <tr>
+    <td rowspan="2" style="width: 15%;">2024-12-10</td>
+    <td style="width: 55%;"><strong>Algorithmic Phase Transitions in Language Models: A Mechanistic Case Study of Arithmetic</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Arithmetic_Head-blue" alt="Arithmetic Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2412.07386"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Introduces "algorithmic stability" and "algorithmic phase transitions" to explain how language models change problem-solving strategies across tasks.<br>
+      • Analyzes Gemma-2-2b on two-operand arithmetic, identifying subcircuits and transitions between symmetric, boundary, and interior tasks.<br>
+      • Demonstrates algorithmic instability in language models, linking it to poor generalization in logical reasoning tasks.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-11-25</td>
+    <td style="width: 55%;"><strong>Adaptive Circuit Behavior and Generalization in Mechanistic Interpretability</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"><img src="https://img.shields.io/badge/Previous_Token_Head-blue" alt="Previous Token Head Badge"><img src="https://img.shields.io/badge/S_Inhibition_Head-blue" alt="S-Inhibition Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2411.16105"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Identifies S2 Hacking, a mechanism enabling circuit performance beyond its hypothesized algorithm.<br>
+      • The generality of the Indirect Object Identification (IOI) circuit was tested on challenging prompt variants (DoubleIO, TripleIO), and new circuits for these variants were discovered using path patching.<br>
+      • The IOI circuit showed 92%-100% component reuse across variants, revealing surprising flexibility and robustness in GPT-2 small's mechanistic interpretability.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-11-21</td>
+    <td style="width: 55%;"><strong>Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Attribute_Extraction_Head-blue" alt="Attribute Extraction Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2411.14257"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Found that unknown entity recognition directions disrupt the factual recall mechanism, by suppressing the attention of attribute extraction heads.<br>
+      • Analyzed the attention head scores in the context of entity recognition, focusing on both known and unknown entities.<br>
+      • Revealed a large disparity in attention between known and unknown entities and also observed a causal relationship between the entity recognition latents and the behavior of these attention heads.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-11-18</td>
+    <td style="width: 55%;"><strong>Mechanism and Emergence of Stacked Attention Heads in Multi-Layer Transformers</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"><img src="https://img.shields.io/badge/Retrieval_Head-blue" alt="Retrieval Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2411.12118"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Introduced the retrieval problem, a simple reasoning task that can be solved only by transformers with a minimum number of layers.<br>
+      • Trained several transformers on a minimal formulation and studied attention maps in the trained transformers.<br>
+      • Transformers solve tasks through a gradually emerging induction head mechanism, enhanced by an implicit curriculum that progressively adds more heads.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2024-11-15</td>
+    <td style="width: 55%;"><strong>Memorization in Attention-only Transformers</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Associative_Memories-blue" alt="Associative Memories Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2411.10115"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Introduces a novel proof for memorization in Attention-only Transformers, extending to any context size, and proposes the concept of approximate memorization of distributions.<br>
+      • Improved bounds for exact memorization, introduced distribution memorization, and provided upper/lower bounds for approximation accuracy.<br>
+      • Proved AoT can memorize Hd_h + d associations, surpassing prior expressivity limits.
+    </td>
+  </tr>
+  <tr>
     <td rowspan="2" style="width: 15%;">2024-11-15</td>
     <td style="width: 55%;"><strong>SEEKR: Selective Attention-Guided Knowledge Retention for Continual Learning of Large Language Models</strong></td>
     <td style="width: 15%;"><img src="https://img.shields.io/badge/Knowledge_Retention_Head-blue" alt="Knowledge-Retention Head Badge"></td>
@@ -601,6 +676,19 @@ language models across various risk levels and attack scenarios, based on the di
     </td>
   </tr>
   <tr>
+    <td rowspan="2" style="width: 15%;">2024-03-17</td>
+    <td style="width: 55%;"><strong>Understanding Addition in Transformers</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Addition_Head-blue" alt="Addition Head Badge"></td>
+    <td style="width: 15%;"><a href="https://openreview.net/forum?id=rIx1YXVWZb"><img src="https://img.shields.io/badge/ICLR-Paper-%23D2691E" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Uncovers how a one-layer Transformer performs n-digit integer addition by dissecting tasks into parallel digit-specific streams and identifying distinct subroutines for different digit positions.<br>
+      • Reverse-engineering the model, analyzing attention patterns, and validating a mathematical framework for addition subtasks.<br>
+      • The model calculates digits in parallel, efficiently handling most cases but struggling with rare cascading carries.
+    </td>
+  </tr>
+  <tr>
     <td rowspan="2" style="width: 15%;">2024-02-28</td>
     <td style="width: 55%;"><strong>How to think step-by-step: A mechanistic understanding of chain-of-thought reasoning</strong></td>
     <td style="width: 15%;"><img src="https://img.shields.io/badge/CoT_Head-blue" alt="CoT Head Badge"></td>
@@ -704,6 +792,19 @@ language models across various risk levels and attack scenarios, based on the di
       • Introduces the concept that query and key matrices in in-context heads operate as "two towers" for metric learning, facilitating similarity computation between label features.<br>
       • Analyzed in-context learning mechanisms; identified specific attention heads crucial for ICL.<br>
       • Reduced ICL accuracy from 87.6% to 24.4% by intervening in only 1% of these heads.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2">2024-02-04</td>
+    <td><strong>The Developmental Landscape of In-Context Learning</strong></td>
+    <td><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"><img src="https://img.shields.io/badge/Previous_Token_Head-blue" alt="Previous Token Head Badge"></td>
+    <td><a href="https://arxiv.org/abs/2402.02364"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Shown that in-context learning emerges in transformers in discrete developmental stages, when they are trained on either language modeling or linear regression tasks.<br>
+      • Using two methods, including Local Learning Coefficient and Essential Dynamics, to detect milestones.<br>
+      • In the Language Modeling setting, previous token heads appear in the LM3 stage, while induction heads appear in the LM4 stage.
     </td>
   </tr>
   <tr>
