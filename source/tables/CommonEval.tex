@@ -1,0 +1,21 @@
+\begin{table}[htbp]
+\centering
+\caption{Selected benchmarks for common evaluation.}
+\label{tab:CommonEval}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}llllc@{}}
+\toprule
+\textbf{Benchmark}                                                                 & \textbf{Type}          & \textbf{Main Task}                        & \textbf{Source} & \textbf{Release Date} \\ \midrule
+MMLU~\citep{MMLU_UCB}                                                              & Knowledge reasoning    & Solve problems with widespread knowledge  & UCB             & 2020.09               \\
+TruthfulQA~\citep{TruthfulQA_Oxford}                                               & Knowledge reasoning    & Answer questions that span 38 categories  & Oxford          & 2021.09               \\
+LogiQA~\citep{LogiQA_20_IJCAI_FDU}                                                 & Logic resoning         & Deduce the answer of logical problems     & FDU             & 2020.07               \\
+MQuAKE~\citep{MQuAKE_23_EMNLP_Princeton}                                           & Logic resoning         & Deduce the answer via multi-hop reasoning & Princeton       & 2023.05               \\
+SST/SST2~\citep{SST_Stanford}                                                      & Sentiment analysis     & Infer positive/negative sentiment         & Standford       & 2013.10               \\
+ETHOS~\citep{ETHOS_20_arXiv_Greece}                                                & Sentiment analysis     & Detect hate speech in online comments     & AUT             & 2020.06               \\
+\href{https://github.com/gkamradt/LLMTest_NeedleInAHaystack}{Needle-in-a-Haystack} & Long context retrieval & Retrieve content from long context        & Github          & 2023.11               \\
+AG News~\citep{AGNews_NYU}                                                         & Text comprehension     & Infer the category of news                & NYU             & 2015.02               \\
+TriviaQA~\citep{TriviaQA_UoW}                                                      & Text comprehension     & Answer questions based on documents       & UoW             & 2017.05               \\
+AGENDA~\citep{AGENDA_UoW}                                                          & Text comprehension     & Generate the abstract of a passage        & UoW             & 2019.04               \\ \bottomrule
+\end{tabular}%
+}
+\end{table}

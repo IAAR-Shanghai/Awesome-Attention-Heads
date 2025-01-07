@@ -1,0 +1,20 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+\begin{table}[htbp]
+\centering
+\caption{\revise{Key Attention Heads in Knowledge Recalling (KR).}}
+\label{tab:KR_Head}
+\resizebox{\textwidth}{!}{%
+\revise{
+\begin{tabular}{@{}lllc@{}}
+\toprule
+\multicolumn{1}{c}{\textbf{Head Name}} & \multicolumn{1}{c}{\textbf{Input Feature}} & \multicolumn{1}{c}{\textbf{Output Feature}}       & \textbf{Layer Distribution} \\ \midrule
+Memory Head                            & User context \& Intermediate results     & Relevant parametric knowledge injected            & Shallow / Middle                      \\
+Constant Head                          & All options in multiple-choice tasks       & Uniformly distributed attention scores            & Middle                     \\
+Single Letter Head                     & Answer options   & Focused attention on a single candidate           & Middle                     \\
+Negative Head                          & Binary decision task context               & Bias attention scores toward negative expressions & Middle                      \\ \bottomrule
+\end{tabular}%
+}
+}
+\end{table}

@@ -1,0 +1,24 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+% \usepackage[normalem]{ulem}
+% \useunder{\uline}{\ul}{}
+\begin{table}[htbp]
+\centering
+\caption{\revise{Key Attention Heads in Expression Preparation (EP).}}
+\label{tab:EP_Head}
+\resizebox{\textwidth}{!}{%
+\revise{
+\begin{tabular}{@{}lllc@{}}
+\toprule
+\multicolumn{1}{c}{\textbf{Head Name}} & \multicolumn{1}{c}{\textbf{Input Feature}} & \multicolumn{1}{c}{\textbf{Output Feature}} & \textbf{Layer Distribution} \\ \midrule
+Mixed Head                             & Outputs of Subject \& Relation Heads       & Integrated and concise final representation & Deep                        \\
+Amplification Head                     & Correct answer signals                     & Amplified attention on correct tokens       & Deep                        \\
+Correct Head                           & Hidden states of different options         & Focused attentions on final output tokens   & Deep                        \\
+Coherence Head                         & Contextualized reasoning outputs           & Fluent and coherent text's tokens           & Middle / deep               \\
+Faithfulness Head                      & Reasoning results and instructions         & Selected faithful contexts                  & Deep                        \\
+ \bottomrule
+\end{tabular}%
+}
+}
+\end{table}

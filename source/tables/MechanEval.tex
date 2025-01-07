@@ -1,0 +1,22 @@
+\begin{table}[htbp]
+    \centering
+    \caption{Selected benchmarks for mechanism exploration evaluation.}
+    \label{tab:MechanismEval}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llllc@{}}
+    \toprule
+    \textbf{Benchmark}                                    & \textbf{Type}         & \textbf{Main Task}                                 & \textbf{Source} & \textbf{Release Date} \\ \midrule
+    LRE~\citep{LRE_MIT}                                   & Knowledge recalling   & Infer object entities given subject-entity prompts & MIT             & 2023.09               \\
+    ToyMovieReview~\citep{Sentiment_23_arXiv_EleutherAI}  & Sentiment analysis    & Infer positive/negative sentiment                  & EleutherAI      & 2023.10               \\
+    ToyMoodStory~\citep{Sentiment_23_arXiv_EleutherAI}    & Sentiment analysis    & Infer positive/negative sentiment                  & EleutherAI      & 2023.10               \\
+    FV-Caplitalize~\citep{FunctionVector_24_ICLR_NEU}     & Token-level reasoning & Infer the capital letter given some words          & NEU             & 2023.10               \\
+    ICL-MC~\citep{Markov_24_arXiv_Harvard}                & Token-level reasoning & Infer next state based on in-context               & Harvard         & 2024.02               \\
+    Succession~\citep{SuccessorHead_24_ICLR_Cambridge}    & Arithmetic reasoning  & Infer next number in a incremental sequence        & Cambridge       & 2023.12               \\
+    Iteration-Synthetic~\citep{IterationHead_24_arXiv_Meta} & Arithmetic reasoning  & Infer the next state of an iterative process       & Meta            & 2024.06               \\
+    Omniglot~\citep{Omniglot_15_NYU}                      & Word-level reasoning  & Infer label from few samples                       & NYU             & 2015.12               \\
+    IOI~\citep{IOI_23_ICLR_Redwood}                       & Word-level reasoning  & Infer the indirect object                          & UCB             & 2022.11               \\
+    Colored Object~\citep{ColorObject_24_ICLR_BrownU}     & Word-level reasoning  & Infer the correct color of a material              & Brown U         & 2023.10               \\
+    World-Capital~\citep{KnowledgeConflict_24_arXiv_UCAS} & Word-level reasoning  & Infer the capital city given a country             & UCAS            & 2024.02               \\ \bottomrule
+    \end{tabular}%
+    }
+\end{table}

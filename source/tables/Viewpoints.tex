@@ -1,0 +1,24 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+\begin{table}[htbp]
+\centering
+\caption{\revise{Summary of the relationship between LLMs and human behaviors explored in existing studies.}}
+\label{tab:viewpoints}
+\resizebox{\textwidth}{!}{%
+\revise{
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Research Paper}            & \multicolumn{1}{c}{\textbf{Viewpoints on the Relationship Between LLMs and Human (Brains)}}                                                                                                                                         \\ \midrule
+\citet{ICSF_24_arXiv_IAAR}         & \begin{tabular}[c]{@{}l@{}}``Self-Feedback'' mechanism in LLMs mirrors \textbf{human metacognition} \citep{HumanMetacognition_18_Cambrige} by enabling models to evaluate and re-\\ fine their own reasoning.\end{tabular} \\
+\citet{dasgupta2022language}       & The language model can exhibit many of the varied, \textbf{context-sensitive patterns} of human reasoning behavior.                                                                                                        \\
+\citet{SAEHumanHeads_24_arXiv_MIT} & \begin{tabular}[c]{@{}l@{}}Different attention heads in LLMs exhibit specialized roles, analogous to the \textbf{modular organization} of human \\ brain regions.\end{tabular} 
+\\
+\citet{janik2023aspects}           & LLMs exhibit some human-like memory characteristics, such as \textbf{primacy} and \textbf{recency effects}. \\
+\citet{schrimpf2021neural}         & \begin{tabular}[c]{@{}l@{}}Representations in Transformers show significant similarity to human brain neural activities during language\\ tasks, particularly in terms of \textbf{predictive processing} (Errors flows bottom-up to adjust the model).\end{tabular}     \\
+\citet{marjieh2024large}           & \begin{tabular}[c]{@{}l@{}}The attention distributions of LLMs for implicit semantic relations in language closely align with human res-\\ ponse patterns in \textbf{perceptual tasks}.\end{tabular}                       \\
+\citet{mischler2024contextual}     & The attention mechanism may partially reflect the brain's \textbf{predictive coding theory} \citep{PredictiveCoding_21}.                                                                                                                                             \\ \bottomrule
+\end{tabular}%
+}
+}
+\end{table}
