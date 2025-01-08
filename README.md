@@ -97,6 +97,21 @@ Papers below are ordered by **publication date**:
     <td><strong>Links</strong></td>
   </tr>
   <tr>
+    <td rowspan="2" style="width: 15%;">2024-12-16</td>
+    <td style="width: 55%;"><strong>Understanding Knowledge Hijack Mechanism in In-context Learning through Associative Memory</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Induction_Head-blue" alt="Induction Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2412.11459"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      • Investigated how the model prioritizes in-context knowledge versus global knowledge when generating outputs, using both theoretical analysis and experimental evaluation.<br>
+      • Analyzed two key aspects of induction heads: the impact of positional encoding on the oversight, and the contributions of in-context information and pretrained knowledge during inference.<br>
+      • Induction head learned by a transformer using RPE can avoid oversight of in-context knowledge within the framework of associative memory.
+    </td>
+  </tr>
+  <tr>
     <td rowspan="2" style="width: 15%;">2024-12-10</td>
     <td style="width: 55%;"><strong>Algorithmic Phase Transitions in Language Models: A Mechanistic Case Study of Arithmetic</strong></td>
     <td style="width: 15%;"><img src="https://img.shields.io/badge/Arithmetic_Head-blue" alt="Arithmetic Head Badge"></td>

@@ -1,0 +1,50 @@
+name: "Add new paper"
+description: "Add new paper in terms of attention heads."
+title: "Add new paper: "
+labels: ["add-new-paper"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Paper Details
+
+        Please fill out all the following information.
+
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: The title of the paper.
+    validations:
+      required: true
+  - type: input
+    id: data
+    attributes:
+      label: Published_Date
+      description: The date when the paper was published.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Journal, conference, or preprint (e.g., arXiv).
+    validations:
+      required: true
+  - type: input
+    id: head
+    attributes:
+      label: Head_Name
+      description: Head discorvered in the paper.
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: |
+        A brief summary of the paper (no more than 60 words in total).
+      placeholder: |
+        - Innovation: 
+        - Tasks: 
+        - Significant Result: 
