@@ -88,6 +88,196 @@ In this survey, we delve into the potential mechanisms of how attention heads in
 ## 📚 Paper List
 Papers below are ordered by **publication date**:
 
+<strong>Year 2025</strong>
+
+<table style="width: 100%;">
+  <tr>
+    <td><strong>Date</strong></td>
+    <td><strong>Paper & Summary</strong></td>
+    <td><strong>Tags</strong></td>
+    <td><strong>Links</strong></td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2025-02-17</td>
+    <td style="width: 55%;"><strong>Exploring Translation Mechanism of Large Language Models</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Source_Head-blue" alt="Source Head Badge"><img src="https://img.shields.io/badge/Indicator_Head-blue" alt="Indicator Head Badge"><img src="https://img.shields.io/badge/Positional_Head-blue" alt="Positional Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2502.11806"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+      <td colspan="3">
+        • Uses path patching to analyze LLM translation mechanisms, identifying key attention heads and MLPs responsible for translation.<br>
+        • Mapped causal roles of components, studied English-centric latent representations, and fine-tuned selected 64 attention heads.<br>
+        • Fine-tuning 64 heads matches full-model tuning, improving translation while preserving general capabilities.
+      </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2025-02-12</td>
+    <td style="width: 55%;"><strong>On Mechanistic Circuits for Extractive Question-Answering</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Attribution_Head-blue" alt="Attribution Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2502.08059"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+      <td colspan="3">
+        • Introduced mechanistic circuits for extractive QA, identifying key attention heads responsible for data attribution.<br>
+        • Used causal mediation analysis to extract circuits, developed ATTNATTRIB for fast attribution, and tested model steering via attribution signals.<br>
+        • ATTNATTRIB achieves state-of-the-art attribution, improving model transparency and enabling controlled reliance on external context.
+      </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2025-02-10</td>
+    <td style="width: 55%;"><strong>Do Attention Heads Compete or Cooperate during Counting?</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Mixed_Head-blue" alt="Mixed Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2502.06923"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+      <td colspan="3">
+        • Analyzes whether attention heads compete or cooperate in counting tasks, treating them as a pseudo-ensemble solving subtasks.<br>
+        • Trained small transformers on counting, examined attention head interactions, and studied their role in syntax-conforming encoding.<br>
+        • Found that attention heads behave cooperatively, but require non-uniform aggregation to align with syntactic structures.
+      </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2025-02-09</td>
+    <td style="width: 55%;"><strong>"Let the AI conspiracy begin..." Language Model coordination is just one inference-intervention away</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/QA_Head-blue" alt="QA Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2502.05945"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+      <td colspan="3">
+        • Introduced interference-time activation shifting, a method to steer LLM behavior by modifying specific attention heads without retraining.<br>
+        • Identified attention heads influencing AI coordination, applied interventions on Llama 2, and tested on an AI coordination dataset.<br>
+        • Demonstrated that targeted attention head interventions override alignment goals, revealing vulnerabilities in current AI safety strategies.
+      </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2025-02-04</td>
+    <td style="width: 55%;"><strong>Mass-Editing Memory with Attention in Transformers: A cross-lingual exploration of knowledge</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Memory_Head-blue" alt="Memory Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2502.02173"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+      <td colspan="3">
+        • Introduced Mass-Editing Memory with Attention in Transformers (MEMAT), a method that significantly improves cross-lingual knowledge editing in transformer models.<br>
+        • Used cross-lingual datasets in English and Catalan to evaluate the effectiveness of MEMAT, focusing on factual knowledge editing in language models.<br>
+        • Achieved more than a 10% improvement in magnitude metrics compared to previous methods.
+      </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2025-02-02</td>
+    <td style="width: 55%;"><strong>Language Models Use Trigonometry to Do Addition</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Arithmetic_Head-blue" alt="Arithmetic Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2502.00873"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+      <td colspan="3">
+        • The paper reveals that LLMs represent numbers as a generalized helix and use a "Clock" algorithm to manipulate these helices for arithmetic operations.<br>
+        • Reverse-engineering LLMs, analyzing attention and MLP outputs, and verifying findings with causal interventions.<br>
+        • LLMs perform addition by trigonometric transformations of number helices, offering the first representation-level explanation of their mathematical reasoning.
+      </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2025-01-25</td>
+    <td style="width: 55%;"><strong>Improving Contextual Faithfulness of Large Language Models via Retrieval Heads-Induced Optimization</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Retrieval_Head-blue" alt="Retrieval Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2501.13573"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+      <td colspan="3">
+        • Introduced RHIO, a framework that improves contextual faithfulness in LLMs by optimizing retrieval heads, enabling the model to distinguish between faithful and unfaithful generations.<br>
+        • Developed GroundBench for faithfulness evaluation, created contrastive training with retrieval head masking, and applied contrastive decoding.<br>
+        • RHIO outperforms GPT-4o, significantly enhancing faithfulness in long-form QA while maintaining retrieval accuracy.
+      </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2025-01-25</td>
+    <td style="width: 55%;"><strong>SEAL: Scaling to Emphasize Attention for Long-Context Retrieval</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Retrieval_Head-blue" alt="Retrieval Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2501.15225"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+      <td colspan="3">
+        • Introduced SEAL, a method to enhance long-context retrieval in LLMs by selectively emphasizing attention heads crucial for retrieval performance.<br>
+        • Identified retrieval-relevant attention heads, developed a learning-based mechanism using zero-shot data, and evaluated on LongBench and out-of-domain tasks.<br>
+        • SEAL significantly improves in-domain and out-of-domain retrieval, effectively extending LLMs’ context limits while maintaining reliable outputs.
+      </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2025-01-24</td>
+    <td style="width: 55%;"><strong>Understanding and Mitigating Gender Bias in LLMs via Interpretable Neuron Editing</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Gender_Head-blue" alt="Gender Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2501.14457"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+      <td colspan="3">
+        • Introduced interpretable neuron editing to mitigate gender bias in LLMs by identifying and modifying specific biased neurons while preserving overall model capabilities.<br>
+        • Developed the CommonWords dataset, identified gender-related neuron circuits, and proposed a logit- and causal-based editing method.<br>
+        • The method outperforms fine-tuning and existing editing techniques, effectively reducing gender bias without degrading model performance.
+      </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2025-01-23</td>
+    <td style="width: 55%;"><strong>DRESSing Up LLM: Efficient Stylized Question-Answering via Style Subspace Editing</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Style_Head-blue" alt="Style Head Badge"></td>
+    <td style="width: 15%;"><a href="https://openreview.net/forum?id=mNVR9jJYqK"><img src="https://img.shields.io/badge/ICLR-Paper-%23D2691E" alt="Paper Badge"></a></td>
+  </tr>
+  <tr>
+      <td colspan="3">
+        • Introduced DRESS, a train-free method for stylizing LLM responses via style subspace editing, ensuring style adaptation without altering semantics.<br>
+        • Developed attention head filtering, style subspace filtering, and adaptive editing to enhance stylized QA.<br>
+        • DRESS outperforms fine-tuning and prompting, achieving superior style intensity and semantic preservation across English and Chinese benchmarks.
+      </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2025-01-22</td>
+    <td style="width: 55%;"><strong>Efficient Prompt Compression with Evaluator Heads for Long-Context Transformer Inference</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Evaluator_Head-blue" alt="Evaluator Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2501.12959"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+      <td colspan="3">
+        • Introduced EHPC, a training-free Evaluator Head-based Prompt Compression method that efficiently selects key tokens for long-context transformer inference.<br>
+        • Identified evaluator heads, developed EHPC for prompt compression, and benchmarked it against retrieval and inference acceleration baselines.<br>
+        • EHPC achieves state-of-the-art prompt compression and inference acceleration, reducing computational costs while maintaining performance.
+      </td>
+  </tr>
+  <tr>
+    <td rowspan="2" style="width: 15%;">2025-01-14</td>
+    <td style="width: 55%;"><strong>Eliciting In-context Retrieval and Reasoning for Long-context Large Language Models</strong></td>
+    <td style="width: 15%;"><img src="https://img.shields.io/badge/Retrieval_Head-blue" alt="Retrieval Head Badge"></td>
+    <td style="width: 15%;">
+      <a href="https://arxiv.org/abs/2501.08248"><img src="https://img.shields.io/badge/arXiv-Paper-%23D2691E?logo=arxiv" alt="Paper Badge"></a>
+    </td>
+  </tr>
+  <tr>
+      <td colspan="3">
+        • Proposed retrieval hit rate, a more direct metric to evaluate attention heads.<br>
+        • In long-context retrieval tasks, identify the retrieval head and utilize it to improve the model's retrieval performance.<br>
+        • Through Joint Retrieval Head Training, a new retrieval head can be obtained to predict the Top-K context for generating final responses, enhancing the model's in-context retrieval and reasoning capabilities.
+      </td>
+  </tr>
+  
+</table>
+
 <strong>Year 2024</strong>
 <table style="width: 100%;">
   <tr>
